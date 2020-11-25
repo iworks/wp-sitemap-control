@@ -53,7 +53,7 @@ $vendor = $base . '/vendor';
 /**
  * require: Iworkssitemap Class
  */
-if ( ! class_exists( 'wp_sitemap_control' ) ) {
+if ( ! class_exists( 'sitemap_control' ) ) {
 	require_once $vendor . '/iworks/sitemap.php';
 }
 /**
@@ -71,50 +71,50 @@ if ( ! class_exists( 'iworks_options' ) ) {
  * load options
  */
 
-global $wp_sitemap_control_options;
-$wp_sitemap_control_options = wp_sitemap_control_get_options_object();
+global $sitemap_control_options;
+$sitemap_control_options = sitemap_control_get_options_object();
 
-function wp_sitemap_control_get_options_object() {
-	global $wp_sitemap_control_options;
-	if ( is_object( $wp_sitemap_control_options ) ) {
-		return $wp_sitemap_control_options;
+function sitemap_control_get_options_object() {
+	global $sitemap_control_options;
+	if ( is_object( $sitemap_control_options ) ) {
+		return $sitemap_control_options;
 	}
-	$wp_sitemap_control_options = new iworks_options();
-	$wp_sitemap_control_options->set_option_function_name( 'wp_sitemap_control_options' );
-	$wp_sitemap_control_options->set_option_prefix( WPSMC_PREFIX );
-	return $wp_sitemap_control_options;
+	$sitemap_control_options = new iworks_options();
+	$sitemap_control_options->set_option_function_name( 'sitemap_control_options' );
+	$sitemap_control_options->set_option_prefix( WPSMC_PREFIX );
+	return $sitemap_control_options;
 }
 
-function wp_sitemap_control_options_init() {
-	global $wp_sitemap_control_options;
-	$wp_sitemap_control_options->options_init();
+function sitemap_control_options_init() {
+	global $sitemap_control_options;
+	$sitemap_control_options->options_init();
 }
 
-function wp_sitemap_control_activate() {
-	$wp_sitemap_control_options = new iworks_options();
-	$wp_sitemap_control_options->set_option_function_name( 'wp_sitemap_control_options' );
-	$wp_sitemap_control_options->set_option_prefix( WPSMC_PREFIX );
-	$wp_sitemap_control_options->activate();
+function sitemap_control_activate() {
+	$sitemap_control_options = new iworks_options();
+	$sitemap_control_options->set_option_function_name( 'sitemap_control_options' );
+	$sitemap_control_options->set_option_prefix( WPSMC_PREFIX );
+	$sitemap_control_options->activate();
 	/**
 	 * install tables
 	 */
-	$wp_sitemap_control = new wp_sitemap_control;
-	$wp_sitemap_control->db_install();
+	$sitemap_control = new sitemap_control;
+	$sitemap_control->db_install();
 }
 
-function wp_sitemap_control_deactivate() {
-	global $wp_sitemap_control_options;
-	$wp_sitemap_control_options->deactivate();
+function sitemap_control_deactivate() {
+	global $sitemap_control_options;
+	$sitemap_control_options->deactivate();
 }
 
-global $wp_sitemap_control;
-$wp_sitemap_control = new wp_sitemap_control();
+global $sitemap_control;
+$sitemap_control = new sitemap_control();
 
 /**
  * install & uninstall
  */
-register_activation_hook( __FILE__, 'wp_sitemap_control_activate' );
-register_deactivation_hook( __FILE__, 'wp_sitemap_control_deactivate' );
+register_activation_hook( __FILE__, 'sitemap_control_activate' );
+register_deactivation_hook( __FILE__, 'sitemap_control_deactivate' );
 /**
  * Ask for vote
  */

@@ -1,5 +1,5 @@
 <?php
-function wp_sitemap_control_options() {
+function sitemap_control_options() {
 	$options = array();
 	/**
 	 * main settings
