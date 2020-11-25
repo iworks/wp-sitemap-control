@@ -1,5 +1,5 @@
 <?php
-function iworks_sitemap_options() {
+function wp_sitemap_control_options() {
 	$options = array();
 	/**
 	 * main settings

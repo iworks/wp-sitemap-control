@@ -21,24 +21,24 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-if ( class_exists( 'iworks_sitemap' ) ) {
+if ( class_exists( 'wp_sitemap_control' ) ) {
 	return;
 }
 
 require_once dirname( dirname( __FILE__ ) ) . '/iworks.php';
 
-class iworks_sitemap extends iworks {
+class wp_sitemap_control extends iworks {
 
 	private $capability;
 	protected $options;
 
 	public function __construct() {
 		parent::__construct();
-		$this->options    = iworks_sitemap_get_options_object();
+		$this->options    = wp_sitemap_control_get_options_object();
 		$this->base       = dirname( dirname( __FILE__ ) );
 		$this->dir        = basename( dirname( $this->base ) );
 		$this->version    = 'PLUGIN_VERSION';
-		$this->capability = apply_filters( 'iworks_sitemap_capability', 'manage_options' );
+		$this->capability = apply_filters( 'wp_sitemap_control_capability', 'manage_options' );
 		/**
 		 * admin init
 		 */
@@ -96,7 +96,7 @@ class iworks_sitemap extends iworks {
 	}
 
 	public function admin_init() {
-		iworks_sitemap_options_init();
+		wp_sitemap_control_options_init();
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 		add_filter( 'plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 2 );
 	}

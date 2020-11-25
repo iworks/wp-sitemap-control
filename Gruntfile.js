@@ -24,9 +24,6 @@ module.exports = function( grunt ) {
 
 		// Concatenate those JS files into a single file (target: [source, source, ...]).
 		js_files_concat: {
-			'assets/scripts/admin/job_institution.js': [
-                'assets/scripts/src/admin/job_institution.js'
-            ],
 		},
 
 		// SASS files to process. Resulting CSS files will be minified as well.
@@ -48,11 +45,11 @@ module.exports = function( grunt ) {
 				'tests/.*',		// Unit testing.
 			],
 			pot_dir: 'languages/', // With trailing slash.
-			textdomain: 'wp-job-manager-science-in-poland',
+			textdomain: 'wp-sitemap-control',
 		},
 
-		dev_plugin_file: 'wp-job-manager-science-in-poland.php',
-		dev_plugin_dir: 'wp-job-manager-science-in-poland/',
+		dev_plugin_file: 'wp-sitemap-control.php',
+		dev_plugin_dir: 'wp-sitemap-control/',
 
 		// BUILD patterns to exclude code for specific builds.
 		replaces: {
@@ -276,8 +273,8 @@ module.exports = function( grunt ) {
 
 			po2mo: {
 				files: {
-					src: conf.translation.pot_dir + 'wp-job-manager-science-in-poland-pl_PL.po',
-					desc: conf.translation.pot_dir + 'wp-job-manager-science-in-poland-pl_PL.mo'
+					src: conf.translation.pot_dir + 'wp-sitemap-control-pl_PL.po',
+					desc: conf.translation.pot_dir + 'wp-sitemap-control-pl_PL.mo'
                 }
 			}
 		},
