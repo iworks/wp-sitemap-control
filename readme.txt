@@ -9,13 +9,13 @@ Requires PHP: 7.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-WP Sitemap Control allow to choose which public post types or taxonomies should be able in the /wp-sitemap.xml
+WP Sitemap Control allow choosing which public post types or taxonomies should be able in the /wp-sitemap.xml
 
 == Description ==
 
-Plugin allows you to control which post types should be included in the
+The plugin allows you to control which post types should be included in the
 [WordPress sitemap][]. By default on build-in sitemap are all public
-post types and taxonomies, but now you can include or exclude selected
+post types and taxonomies, but now you can include or exclude the selected
 type of content from your sitemap. [Learn about sitemaps][].
 
 [WordPress sitemap]: https://make.wordpress.org/core/2020/07/22/new-xml-sitemaps-functionality-in-wordpress-5-5/
@@ -25,7 +25,7 @@ type of content from your sitemap. [Learn about sitemaps][].
 
 There are 3 ways to install this plugin:
 
-= The super easy way =
+= The super-easy way =
 
 1. **Login** to your WordPress Admin panel.
 1. **Go to Plugins > Add New.**
@@ -58,7 +58,7 @@ There are 3 ways to install this plugin:
 
 = I do not see /wp-sitemap.xml =
 
-Site need to be public. If you ask for no indexing ,then a sitemap is not available.
+The site needs to be public. If you ask for no indexing, then a sitemap is not available.
 
 
 = What is a sitemap? =
@@ -69,9 +69,14 @@ crawl your site.
 
 == Screenshots ==
 
+1. Configuration screen.
 
 == Changelog ==
 
 = 1.0.0 =
 * Init version.
 
+== Upgrade Notice ==
+
+= 1.0.0 =
+This version is a init, just start to use.
