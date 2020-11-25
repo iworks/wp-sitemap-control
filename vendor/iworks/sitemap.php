@@ -197,7 +197,7 @@ class wp_sitemap_control extends iworks {
 					esc_url( $url )
 				);
 			}
-			$links[] = '<a href="http://iworks.pl/donate/sitemap.php">' . __( 'Donate' ) . '</a>';
+			$links[] = '<a href="http://iworks.pl/donate/wp-sitemap-control.php">' . __( 'Donate' ) . '</a>';
 
 		}
 		return $links;
