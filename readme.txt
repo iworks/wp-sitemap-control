@@ -30,26 +30,26 @@ There are 3 ways to install this plugin:
 1. **Click** Install Now. After clicking the link, you’ll be asked if you’re sure you want to install the plugin.
 1. **Click** Yes, and WordPress completes the installation.
 1. **Activate** the plugin.
-1. That's all. The plugin does not have any configuration.
+1. A new menu `Sitemap` in `Settings` will appear in your Admin Menu.
 
 ***
 
 = The easy way =
 
-1. Download the plugin (.zip file) on the right column of this page
-1. In your Admin, go to menu Plugins > Add
-1. Select button `Upload Plugin`
-1. Upload the .zip file you just downloaded
-1. Activate the plugin
-1. That's all. The plugin does not have any configuration.
+1. Download the plugin (.zip file) on the right column of this page.
+1. In your Admin, go to menu Plugins > Add.
+1. Select button `Upload Plugin`.
+1. Upload the .zip file you just downloaded.
+1. Activate the plugin.
+1. A new menu `Sitemap` in `Settings` will appear in your Admin Menu.
 
 ***
 
 = The old and reliable way (FTP) =
 
-1. Upload `WP Sitemap Control` folder to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. That's all. The plugin does not have any configuration.
+1. Upload `WP Sitemap Control` folder to the `/wp-content/plugins/` directory.
+1. Activate the plugin through the 'Plugins' menu in WordPress.
+1. A new menu `Sitemap` in `Settings` will appear in your Admin Menu.
 
 == Frequently Asked Questions ==
 

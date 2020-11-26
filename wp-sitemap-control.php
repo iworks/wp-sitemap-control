@@ -2,13 +2,13 @@
 /**
  * Plugin Name: WP Sitemap Control
  * Plugin URI: http://iworks.pl/tag/wp-sitemap
- * Description: Allow to controll WordPress build-in sitemap.xml
+ * Description: Allow to control WordPress build-in sitemap.xml
  * Version: PLUGIN_VERSION
  * Author: iworks
  * Author URI: http://iworks.pl/
  * Requires at least: 5.5
- * Tested up to: 5.5
- * Requires PHP: 7.0
+ * Tested up to: 5.6
+ * Requires PHP: 7.2
  * Text Domain: wp-sitemap-control
  * Domain Path: /languages/
  * License: GPL2+

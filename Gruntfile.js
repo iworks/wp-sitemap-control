@@ -54,8 +54,10 @@ module.exports = function( grunt ) {
 		// BUILD patterns to exclude code for specific builds.
 		replaces: {
 			patterns: [
+				{ match: /IWORKS_OPTIONS_TEXTDOMAIN/g, replace: '<%= pkg.name %>' },
+				{ match: /IWORKS_RATE_TEXTDOMAIN/g, replace: '<%= pkg.name %>' },
 				{ match: /PLUGIN_VERSION/g, replace: '<%= pkg.version %>' },
-				{ match: /BUILDTIME/g, replace: buildtime }
+				{ match: /BUILDTIME/g, replace: buildtime },
 			],
 
 			// Files to apply above patterns to (not only php files).

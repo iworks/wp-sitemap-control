@@ -49,12 +49,19 @@ class sitemap_control extends iworks {
 		add_filter( 'wp_sitemaps_post_types', array( $this, 'post_types' ) );
 		add_filter( 'wp_sitemaps_taxonomies', array( $this, 'taxonomies' ) );
 		add_filter( 'wp_sitemaps_posts_query_args', array( $this, 'attachments' ), 10, 2 );
+		add_filter( 'wp_sitemaps_posts_entry', array( $this, 'add_last_mod' ), 10, 2 );
+		add_filter( 'wp_sitemaps_add_provider', array( $this, 'provider' ), 10, 2 );
 		/**
 		 * iWorks Rate integration
 		 */
 		add_action( 'iworks_rate_css', array( $this, 'iworks_rate_css' ) );
 	}
 
+	/**
+	 * Show attachements
+	 *
+	 * @since 1.0.0
+	 */
 	public function attachments( $args, $post_type ) {
 		if ( 'attachment' !== $post_type ) {
 			return $args;
@@ -63,6 +70,11 @@ class sitemap_control extends iworks {
 		return $args;
 	}
 
+	/**
+	 * handle post types
+	 *
+	 * @since 1.0.0
+	 */
 	public function post_types( $elements ) {
 		foreach ( $this->options->get_all_options() as $name => $value ) {
 			if ( preg_match( '/^post_type_(.+)$/', $name, $matches ) ) {
@@ -79,6 +91,11 @@ class sitemap_control extends iworks {
 		return $elements;
 	}
 
+	/**
+	 * handle taxonomies
+	 *
+	 * @since 1.0.0
+	 */
 	public function taxonomies( $elements ) {
 		foreach ( $this->options->get_all_options() as $name => $value ) {
 			if ( preg_match( '/^taxonomy_(.+)$/', $name, $matches ) ) {
@@ -183,6 +200,8 @@ class sitemap_control extends iworks {
 
 	/**
 	 * Plugin row data
+	 *
+	 * @since 1.0.0
 	 */
 	public function plugin_row_meta( $links, $file ) {
 		if ( $this->dir . '/wp-sitemap-control.php' == $file ) {
@@ -206,7 +225,7 @@ class sitemap_control extends iworks {
 	/**
 	 * Change logo for "rate" message.
 	 *
-	 * @since 2.6.6
+	 * @since 1.0.0
 	 */
 	public function iworks_rate_css() {
 		$logo = plugin_dir_url( dirname( dirname( __FILE__ ) ) ) . 'assets/images/logo.svg';
@@ -214,4 +233,35 @@ class sitemap_control extends iworks {
 		printf( '.iworks-notice-sitemap .iworks-notice-logo{background-image:url(%s);}', esc_url( $logo ) );
 		echo '</style>';
 	}
+
+	/**
+	 * Add lastmod to entry
+	 *
+	 * @since 1.0.0
+	 */
+	public function add_last_mod( $entry, $post ) {
+		if ( $this->options->get_option( 'lastmod' ) ) {
+			$entry['lastmod'] = $post->post_modified_gmt;
+		}
+		return $entry;
+	}
+
+	/**
+	 * Handle provider
+	 *
+	 * @since 1.0.0
+	 */
+	public function provider( $provider, $name ) {
+		/**
+		 * remove users (authors)
+		 */
+		if (
+			'users' === $name
+			&& ! $this->options->get_option( 'users' )
+		) {
+			return false;
+		}
+		return $provider;
+	}
+
 }
