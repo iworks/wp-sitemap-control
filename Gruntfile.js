@@ -54,16 +54,18 @@ module.exports = function( grunt ) {
 		// BUILD patterns to exclude code for specific builds.
 		replaces: {
 			patterns: [
+				{ match: /BUILDTIME/g, replace: buildtime },
+				{ match: /PLUGIN_TILL_YEAR/g, replace: '<%= grunt.template.today("yyyy") %>' },
 				{ match: /IWORKS_OPTIONS_TEXTDOMAIN/g, replace: '<%= pkg.name %>' },
 				{ match: /IWORKS_RATE_TEXTDOMAIN/g, replace: '<%= pkg.name %>' },
-				{ match: /PLUGIN_VERSION/g, replace: '<%= pkg.version %>' },
-				{ match: /BUILDTIME/g, replace: buildtime },
+				{ match: /PLUGIN_VERSION/g, replace: '<%= pkg.version %>' }
 			],
 
 			// Files to apply above patterns to (not only php files).
 			files: {
 				expand: true,
 				src: [
+					'languages/*.pot',
 					'**/*.php',
 					'**/*.css',
 					'**/*.js',
@@ -79,9 +81,9 @@ module.exports = function( grunt ) {
 					'!tests/**',
 					'!.git/**',
 					'!stylelint.config.js',
-					'!vendor',
-					'!vendor/*',
-					'!vendor/**'
+					'vendor',
+					'vendor/*',
+					'vendor/**'
 				],
 				dest: './release/<%= pkg.name %>/'
 			}

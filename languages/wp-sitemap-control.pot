@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: WP Sitemap Control PLUGIN_VERSION\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/wp-sitemap-control\n"
-"POT-Creation-Date: 2020-11-26 15:48:55+00:00\n"
+"POT-Creation-Date: 2020-11-26 16:28:25+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -121,11 +121,11 @@ msgstr ""
 msgid "No thanks"
 msgstr ""
 
-#: vendor/iworks/sitemap.php:196
+#: vendor/iworks/sitemap.php:215
 msgid "Settings"
 msgstr ""
 
-#: vendor/iworks/sitemap.php:200
+#: vendor/iworks/sitemap.php:219
 msgid "Donate"
 msgstr ""
 
@@ -138,7 +138,7 @@ msgid "http://iworks.pl/tag/wp-sitemap"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Allow to controll WordPress build-in sitemap.xml"
+msgid "Allow to control WordPress build-in sitemap.xml"
 msgstr ""
 
 #. Author of the plugin/theme
