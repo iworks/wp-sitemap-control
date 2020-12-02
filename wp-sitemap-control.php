@@ -99,7 +99,6 @@ function sitemap_control_activate() {
 	 * install tables
 	 */
 	$sitemap_control = new sitemap_control;
-	$sitemap_control->db_install();
 }
 
 function sitemap_control_deactivate() {

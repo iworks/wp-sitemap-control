@@ -67,6 +67,9 @@ A sitemap is a file where you provide information about the pages, videos, and o
 
 == Changelog ==
 
+= 1.0.1 (2020-12-02) =
+* Fixed wrong method call. Props for Maciej Kuchnik.
+
 = 1.0.0 =
 * Init version. Props for [Sebastian Miśniakiewicz](https://profiles.wordpress.org/sebastianm/) for inspiration.
 
