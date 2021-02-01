@@ -241,7 +241,7 @@ class sitemap_control extends iworks {
 	 */
 	public function add_last_mod( $entry, $post ) {
 		if ( $this->options->get_option( 'lastmod' ) ) {
-			$entry['lastmod'] = $post->post_modified_gmt;
+			$entry['lastmod'] = date( 'Y-m-d', strtotime( $post->post_modified_gmt ) );
 		}
 		return $entry;
 	}

@@ -3,7 +3,7 @@ Contributors: iworks
 Donate link: http://iworks.pl/donate/wp-sitemap-control.php
 Tags: sitemap.xml
 Requires at least: 5.5
-Tested up to: 5.5
+Tested up to: 5.6
 Stable tag: PLUGIN_VERSION
 Requires PHP: 7.0
 License: GPLv3 or later
@@ -66,6 +66,9 @@ A sitemap is a file where you provide information about the pages, videos, and o
 
 
 == Changelog ==
+
+= 1.0.2 (2021-02-01) =
+* Fixed wrong date format for `lastmod` tag.
 
 = 1.0.1 (2020-12-02) =
 * Fixed wrong method call. Props for Maciej Kuchnik.
