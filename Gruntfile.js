@@ -24,6 +24,9 @@ module.exports = function( grunt ) {
 
 		// Concatenate those JS files into a single file (target: [source, source, ...]).
 		js_files_concat: {
+			'assets/scripts/admin/wp-sitemap-control.js': [
+				'assets/scripts/admin/src/options.js'
+			]
 		},
 
 		// SASS files to process. Resulting CSS files will be minified as well.

@@ -6,12 +6,15 @@ function sitemap_control_options() {
 	 */
 	$parent           = 'options-general.php';
 	$options['index'] = array(
-		'version'    => '0.0',
-		'use_tabs'   => true,
-		'page_title' => __( 'Sitemap', 'wp-sitemap-control' ),
-		'menu'       => 'submenu',
-		'parent'     => $parent,
-		'options'    => array(),
+		'version'         => '0.0',
+		'use_tabs'        => true,
+		'page_title'      => __( 'Sitemap', 'wp-sitemap-control' ),
+		'menu'            => 'submenu',
+		'parent'          => $parent,
+		'options'         => array(),
+		'enqueue_scripts' => array(
+			'wp-sitemap-control-admin',
+		),
 	);
 	/**
 	 * Post types
@@ -19,6 +22,16 @@ function sitemap_control_options() {
 	$options['index']['options'][] = array(
 		'type'  => 'heading',
 		'label' => __( 'Post Types', 'wp-sitemap-control' ),
+	);
+	$options['index']['options'][] = array(
+		'name'    => 'post_type',
+		'type'    => 'checkbox',
+		'th'      => __( 'Switch all', 'wp-sitemap-control' ),
+		'classes' => array( 'switch-button' ),
+	);
+	$options['index']['options'][] = array(
+		'type'  => 'subheading',
+		'label' => __( 'Post Types List', 'wp-sitemap-control' ),
 	);
 	foreach ( get_post_types( array( 'public' => true ), 'objects' ) as $slug => $obj ) {
 		if ( 'post_format' === $slug ) {
@@ -30,7 +43,7 @@ function sitemap_control_options() {
 			'th'                => $obj->label,
 			'default'           => in_array( $slug, array( 'post', 'page' ) ),
 			'sanitize_callback' => 'absint',
-			'classes'           => array( 'switch-button' ),
+			'classes'           => array( 'switch-button post-type' ),
 		);
 	}
 	/**
@@ -40,6 +53,16 @@ function sitemap_control_options() {
 		'type'  => 'heading',
 		'label' => __( 'Taxonomies', 'wp-sitemap-control' ),
 	);
+	$options['index']['options'][] = array(
+		'name'    => 'taxonomy',
+		'type'    => 'checkbox',
+		'th'      => __( 'Switch all', 'wp-sitemap-control' ),
+		'classes' => array( 'switch-button' ),
+	);
+	$options['index']['options'][] = array(
+		'type'  => 'subheading',
+		'label' => __( 'Taxonomies List', 'wp-sitemap-control' ),
+	);
 	foreach ( get_taxonomies( array( 'public' => true ), 'objects' ) as $slug => $obj ) {
 		$options['index']['options'][] = array(
 			'name'              => 'taxonomy_' . $slug,
@@ -47,7 +70,7 @@ function sitemap_control_options() {
 			'th'                => $obj->label,
 			'default'           => in_array( $slug, array( 'post_tag', 'category' ) ),
 			'sanitize_callback' => 'absint',
-			'classes'           => array( 'switch-button' ),
+			'classes'           => array( 'switch-button taxonomy' ),
 		);
 	}
 	/**

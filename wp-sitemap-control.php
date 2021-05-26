@@ -47,14 +47,14 @@ define( 'WPSMC_PREFIX', 'wpsmc_' );
  */
 load_plugin_textdomain( 'wp-sitemap-control', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
 
-$base   = dirname( __FILE__ );
-$vendor = $base . '/vendor';
+$base     = dirname( __FILE__ );
+$includes = $base . '/includes';
 
 /**
  * require: Iworkssitemap Class
  */
 if ( ! class_exists( 'sitemap_control' ) ) {
-	require_once $vendor . '/iworks/sitemap.php';
+	require_once $includes . '/iworks/sitemap.php';
 }
 /**
  * configuration
@@ -64,7 +64,7 @@ require_once $base . '/etc/options.php';
  * require: IworksOptions Class
  */
 if ( ! class_exists( 'iworks_options' ) ) {
-	require_once $vendor . '/iworks/options/options.php';
+	require_once $includes . '/iworks/options/options.php';
 }
 
 /**
@@ -117,7 +117,7 @@ register_deactivation_hook( __FILE__, 'sitemap_control_deactivate' );
 /**
  * Ask for vote
  */
-include_once dirname( __FILE__ ) . '/vendor/iworks/rate/rate.php';
+include_once $includes . '/iworks/rate/rate.php';
 do_action(
 	'iworks-register-plugin',
 	plugin_basename( __FILE__ ),

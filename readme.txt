@@ -67,6 +67,11 @@ A sitemap is a file where you provide information about the pages, videos, and o
 
 == Changelog ==
 
+= 1.0.3 (2021-xx-xx) =
+* Added ability to select/deselect all post types.
+* Added ability to select/deselect all taxonomies.
+* Renamed directory `vendor` into `includes`.
+
 = 1.0.2 (2021-02-01) =
 * Fixed wrong date format for `lastmod` tag.
 

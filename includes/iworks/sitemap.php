@@ -43,6 +43,8 @@ class sitemap_control extends iworks {
 		 * admin init
 		 */
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
+		add_action( 'init', array( $this, 'register' ) );
+		add_action( 'load-settings_page_wpsmc_index', array( $this, 'admin_enqueue' ) );
 		/**
 		 * hooks
 		 */
@@ -55,6 +57,19 @@ class sitemap_control extends iworks {
 		 * iWorks Rate integration
 		 */
 		add_action( 'iworks_rate_css', array( $this, 'iworks_rate_css' ) );
+		/**
+		 * add head link
+		 */
+		add_action( 'wp_head', array( $this, 'wp_head_add_sitemap' ) );
+	}
+
+	public function wp_head_add_sitemap() {
+		printf(
+			'<link rel="sitemap" type="application/xml" title="%s" href="%s" />%s',
+			_x( 'Sitemap', 'sitemap tag title in html head', 'wp-sitemap-control' ),
+			wp_make_link_relative( site_url( '/wp-sitemap.xml' ) ),
+			PHP_EOL
+		);
 	}
 
 	/**
@@ -262,6 +277,42 @@ class sitemap_control extends iworks {
 			return false;
 		}
 		return $provider;
+	}
+
+	/**
+	 * Register assets
+	 *
+	 * @since 1.0.3
+	 */
+	public function register() {
+		/**
+		 * Admin scripts
+		 */
+		$files = array(
+			'wp-sitemap-control-admin' => array(
+				'src'  => sprintf( '/admin/wp-sitemap-control%s.js', $this->dev ),
+				'deps' => array( 'jquery' ),
+			),
+		);
+		foreach ( $files as $handle => $data ) {
+			$file = sprintf( 'assets/scripts%s', $data['src'] );
+			wp_register_script(
+				$handle,
+				plugins_url( $file, $this->base ),
+				$data['deps'],
+				$this->get_version(),
+				true
+			);
+		}
+	}
+
+	/**
+	 * Enqueue assets
+	 *
+	 * @since 1.0.3
+	 */
+	public function admin_enqueue() {
+		wp_enqueue_script( 'wp-sitemap-control-admin' );
 	}
 
 }
