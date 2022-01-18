@@ -54,7 +54,7 @@ $includes = $base . '/includes';
  * require: Iworkssitemap Class
  */
 if ( ! class_exists( 'sitemap_control' ) ) {
-	require_once $includes . '/iworks/sitemap.php';
+	require_once $includes . '/iworks/class-wp-sitemap-control.php';
 }
 /**
  * configuration
@@ -82,6 +82,7 @@ function sitemap_control_get_options_object() {
 	$sitemap_control_options = new iworks_options();
 	$sitemap_control_options->set_option_function_name( 'sitemap_control_options' );
 	$sitemap_control_options->set_option_prefix( WPSMC_PREFIX );
+	$sitemap_control_options->set_plugin( basename( __FILE__ ) );
 	return $sitemap_control_options;
 }
 
@@ -114,6 +115,7 @@ $sitemap_control = new sitemap_control();
  */
 register_activation_hook( __FILE__, 'sitemap_control_activate' );
 register_deactivation_hook( __FILE__, 'sitemap_control_deactivate' );
+
 /**
  * Ask for vote
  */
@@ -121,8 +123,8 @@ include_once $includes . '/iworks/rate/rate.php';
 do_action(
 	'iworks-register-plugin',
 	plugin_basename( __FILE__ ),
-	__( 'WP Sitemap Control', 'sitemap' ),
-	'sitemap'
+	__( 'WP Sitemap Control', 'wp-sitemap-control' ),
+	'wp-sitemap-control'
 );
 
 

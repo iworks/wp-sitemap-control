@@ -25,12 +25,14 @@ if ( class_exists( 'sitemap_control' ) ) {
 	return;
 }
 
-require_once dirname( dirname( __FILE__ ) ) . '/iworks.php';
+require_once dirname( dirname( __FILE__ ) ) . '/class-iworks.php';
 
 class sitemap_control extends iworks {
 
 	private $capability;
 	protected $options;
+	private $nonce_name = 'iworks_wp_sitemap_control_nonce';
+	private $meta_name;
 
 	public function __construct() {
 		parent::__construct();
@@ -39,12 +41,15 @@ class sitemap_control extends iworks {
 		$this->dir        = basename( dirname( $this->base ) );
 		$this->version    = 'PLUGIN_VERSION';
 		$this->capability = apply_filters( 'sitemap_control_capability', 'manage_options' );
+		$this->meta_name  = $this->get_meta_name( $this->options->get_option_name( 'include' ) );
 		/**
-		 * admin init
+		 * WordPress hooks
 		 */
+		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
 		add_action( 'init', array( $this, 'register' ) );
 		add_action( 'load-settings_page_wpsmc_index', array( $this, 'admin_enqueue' ) );
+		add_action( 'save_post', array( $this, 'save_data' ) );
 		/**
 		 * hooks
 		 */
@@ -54,13 +59,14 @@ class sitemap_control extends iworks {
 		add_filter( 'wp_sitemaps_posts_entry', array( $this, 'add_last_mod' ), 10, 2 );
 		add_filter( 'wp_sitemaps_add_provider', array( $this, 'provider' ), 10, 2 );
 		/**
-		 * iWorks Rate integration
-		 */
-		add_action( 'iworks_rate_css', array( $this, 'iworks_rate_css' ) );
-		/**
 		 * add head link
 		 */
 		add_action( 'wp_head', array( $this, 'wp_head_add_sitemap' ) );
+		/**
+		 * iWorks Rate integration
+		 * change logo for rate
+		 */
+		add_filter( 'iworks_rate_notice_logo_style', array( $this, 'filter_plugin_logo' ), 10, 2 );
 	}
 
 	public function wp_head_add_sitemap() {
@@ -238,15 +244,21 @@ class sitemap_control extends iworks {
 	}
 
 	/**
-	 * Change logo for "rate" message.
+	 * Plugin logo for rate messages
 	 *
-	 * @since 1.0.0
+	 * @since 1.0.1
+	 *
+	 * @param string $logo Logo, can be empty.
+	 * @param object $plugin Plugin basic data.
 	 */
-	public function iworks_rate_css() {
-		$logo = plugin_dir_url( dirname( dirname( __FILE__ ) ) ) . 'assets/images/logo.svg';
-		echo '<style type="text/css">';
-		printf( '.iworks-notice-sitemap .iworks-notice-logo{background-image:url(%s);}', esc_url( $logo ) );
-		echo '</style>';
+	public function filter_plugin_logo( $logo, $plugin ) {
+		if ( is_object( $plugin ) ) {
+			$plugin = (array) $plugin;
+		}
+		if ( 'wp-sitemap-control' === $plugin['slug'] ) {
+			return plugin_dir_url( dirname( dirname( __FILE__ ) ) ) . '/assets/images/logo.svg';
+		}
+		return $logo;
 	}
 
 	/**
@@ -315,4 +327,104 @@ class sitemap_control extends iworks {
 		wp_enqueue_script( 'wp-sitemap-control-admin' );
 	}
 
+	public function add_meta_boxes() {
+		$post_type = get_post_type();
+		if ( ! $this->options->get_option( 'single_' . $post_type ) ) {
+			return;
+		}
+		add_meta_box(
+			'wp-sitemap-control',
+			__( 'WP Sitemap Control', 'wp-sitemap-control' ),
+			array( $this, 'meta_box_html' ),
+			$post_type
+		);
+	}
+
+	private function sanitize_include_exclude_value( $value ) {
+		if ( empty( $value ) ) {
+			return 'include';
+		}
+		if ( preg_match( '/^(include|exclude)$/', $value ) ) {
+			return $value;
+		}
+		return 'include';
+	}
+
+	private function get_include_exclude_value_by_post_meta( $post_id ) {
+		$value = get_post_meta( $post_id, $this->meta_name, true );
+		$value = $this->sanitize_include_exclude_value( $value );
+		return $value;
+	}
+
+	/**
+	 * entry metabox html content
+	 *
+	 * @since 1.0.0
+	 */
+	public function meta_box_html( $post ) {
+		$value = $this->get_include_exclude_value_by_post_meta( $post->ID );
+		$this->add_nonce();
+		$post_type_object = get_post_type_object( get_post_type() );
+		echo '<ul>';
+		echo '<li>';
+		echo '<label>';
+		printf(
+			' <input type="radio" name="%s" value="include" %s />',
+			esc_attr( $this->meta_name ),
+			checked( $value, 'include', false )
+		);
+		printf(
+			esc_html__( 'Include this %s in wp-sitemap.xml', 'wp-sitemap-control' ),
+			strtolower( $post_type_object->labels->singular_name )
+		);
+		echo '</label';
+		echo '</li>';
+		echo '<li>';
+		echo '<label>';
+		printf(
+			' <input type="radio" name="%s" value="exclude" %s />',
+			esc_attr( $this->meta_name ),
+			checked( $value, 'exclude', false )
+		);
+		printf(
+			esc_html__( 'Exclude this %s from wp-sitemap.xml.', 'wp-sitemap-control' ),
+			strtolower( $post_type_object->labels->singular_name )
+		);
+		echo '</label';
+		echo '</li>';
+		echo '</ul>';
+		echo $this->meta_name;
+	}
+
+	private function add_nonce() {
+		wp_nonce_field( __CLASS__, $this->nonce_name );
+	}
+
+	public function save_data( $post_id ) {
+		if ( ! $this->check_nonce() ) {
+			return;
+		}
+		$value = filter_input( INPUT_POST, $this->meta_name, FILTER_SANITIZE_STRING );
+		$value = $this->sanitize_include_exclude_value( $value );
+		$this->update_single_post_meta( $post_id, $this->meta_name, $value );
+	}
+
+	private function check_nonce() {
+		$value = filter_input( INPUT_POST, $this->nonce_name, FILTER_SANITIZE_STRING );
+		if ( ! empty( $value ) ) {
+			return wp_verify_nonce( $value, __CLASS__ );
+		}
+		return false;
+	}
+
+	private function update_single_post_meta( $post_ID, $meta_key, $meta_value ) {
+		if ( empty( $meta_value ) ) {
+			delete_post_meta( $post_ID, $meta_key );
+			return;
+		}
+		if ( add_post_meta( $post_ID, $meta_key, $meta_value, true ) ) {
+			return;
+		}
+		update_post_meta( $post_ID, $meta_key, $meta_value );
+	}
 }
