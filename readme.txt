@@ -1,9 +1,9 @@
 === WP Sitemap Control ===
 Contributors: iworks
 Donate link: http://iworks.pl/donate/wp-sitemap-control.php
-Tags: sitemap.xml
+Tags: sitemap.xml, sitemap
 Requires at least: 5.5
-Tested up to: 5.6
+Tested up to: 5.9
 Stable tag: PLUGIN_VERSION
 Requires PHP: 7.0
 License: GPLv3 or later
@@ -14,6 +14,8 @@ WP Sitemap Control allow choosing which public post types or taxonomies should b
 == Description ==
 
 The plugin allows you to control which post types should be included in the [WordPress sitemap][]. By default on build-in sitemap are all public post types and taxonomies, but now you can include or exclude the selected type of content from your sitemap. [Learn about sitemaps][].
+
+You can exclude single entries too.
 
 [WordPress sitemap]: https://make.wordpress.org/core/2020/07/22/new-xml-sitemaps-functionality-in-wordpress-5-5/
 [Learn about sitemaps]: https://developers.google.com/search/docs/advanced/sitemaps/overview
@@ -67,10 +69,13 @@ A sitemap is a file where you provide information about the pages, videos, and o
 
 == Changelog ==
 
-= 1.0.3 (2021-xx-xx) =
+= 1.0.3 (2022-01-20) =
+* Added ability to exclude single entry from sitemap.xml.
 * Added ability to select/deselect all post types.
 * Added ability to select/deselect all taxonomies.
 * Renamed directory `vendor` into `includes`.
+* Updated iWorks Options to 2.7.3.
+* Updated iWorks Rate to 2.0.6.
 
 = 1.0.2 (2021-02-01) =
 * Fixed wrong date format for `lastmod` tag.

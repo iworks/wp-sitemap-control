@@ -29,9 +29,33 @@ require_once dirname( dirname( __FILE__ ) ) . '/class-iworks.php';
 
 class sitemap_control extends iworks {
 
+	/**
+	 * Capability for the plugin.
+	 *
+	 * @since 1.0.0
+	 */
 	private $capability;
+
+	/**
+	 * Option class object.
+	 *
+	 * @since 1.0.2
+	 */
 	protected $options;
+
+	/**
+	 * Nonce name
+	 *
+	 * @since 1.0.2
+	 */
 	private $nonce_name = 'iworks_wp_sitemap_control_nonce';
+
+
+	/**
+	 * Mata name for sitemap.xml include/exclude.
+	 *
+	 * @since 1.0.2
+	 */
 	private $meta_name;
 
 	public function __construct() {
@@ -47,9 +71,11 @@ class sitemap_control extends iworks {
 		 */
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
+		add_action( 'edit_attachment', array( $this, 'save_data' ) );
 		add_action( 'init', array( $this, 'register' ) );
 		add_action( 'load-settings_page_wpsmc_index', array( $this, 'admin_enqueue' ) );
 		add_action( 'save_post', array( $this, 'save_data' ) );
+		add_filter( 'wp_sitemaps_posts_query_args', array( $this, 'filter_wp_sitemaps_posts_query_args' ), 10, 2 );
 		/**
 		 * hooks
 		 */
@@ -336,7 +362,9 @@ class sitemap_control extends iworks {
 			'wp-sitemap-control',
 			__( 'WP Sitemap Control', 'wp-sitemap-control' ),
 			array( $this, 'meta_box_html' ),
-			$post_type
+			$post_type,
+			'side',
+			'low',
 		);
 	}
 
@@ -373,10 +401,7 @@ class sitemap_control extends iworks {
 			esc_attr( $this->meta_name ),
 			checked( $value, 'include', false )
 		);
-		printf(
-			esc_html__( 'Include this %s in wp-sitemap.xml', 'wp-sitemap-control' ),
-			strtolower( $post_type_object->labels->singular_name )
-		);
+		esc_html_e( 'Include in sitemap', 'wp-sitemap-control' );
 		echo '</label';
 		echo '</li>';
 		echo '<li>';
@@ -386,20 +411,26 @@ class sitemap_control extends iworks {
 			esc_attr( $this->meta_name ),
 			checked( $value, 'exclude', false )
 		);
-		printf(
-			esc_html__( 'Exclude this %s from wp-sitemap.xml.', 'wp-sitemap-control' ),
-			strtolower( $post_type_object->labels->singular_name )
-		);
+		esc_html_e( 'Exclude from sitemap', 'wp-sitemap-control' );
 		echo '</label';
 		echo '</li>';
 		echo '</ul>';
-		echo $this->meta_name;
 	}
 
+	/**
+	 * generate nonce
+	 *
+	 * @since 1.0.2
+	 */
 	private function add_nonce() {
 		wp_nonce_field( __CLASS__, $this->nonce_name );
 	}
 
+	/**
+	 * Save entry meta for sitemap.xml
+	 *
+	 * @since 1.0.2
+	 */
 	public function save_data( $post_id ) {
 		if ( ! $this->check_nonce() ) {
 			return;
@@ -409,6 +440,11 @@ class sitemap_control extends iworks {
 		$this->update_single_post_meta( $post_id, $this->meta_name, $value );
 	}
 
+	/**
+	 * Check nonce.
+	 *
+	 * @since 1.0.2
+	 */
 	private function check_nonce() {
 		$value = filter_input( INPUT_POST, $this->nonce_name, FILTER_SANITIZE_STRING );
 		if ( ! empty( $value ) ) {
@@ -417,6 +453,11 @@ class sitemap_control extends iworks {
 		return false;
 	}
 
+	/**
+	 * Update single meta post value.
+	 *
+	 * @since 1.0.2
+	 */
 	private function update_single_post_meta( $post_ID, $meta_key, $meta_value ) {
 		if ( empty( $meta_value ) ) {
 			delete_post_meta( $post_ID, $meta_key );
@@ -427,4 +468,27 @@ class sitemap_control extends iworks {
 		}
 		update_post_meta( $post_ID, $meta_key, $meta_value );
 	}
+
+	/**
+	 * Filter entries on sitemap.xml
+	 *
+	 * @since 1.0.2
+	 */
+	public function filter_wp_sitemaps_posts_query_args( $args, $post_type ) {
+		$local_args = array(
+			'fields'      => 'ids',
+			'meta_key'    => $this->meta_name,
+			'meta_value'  => 'exclude',
+			'nopaging'    => true,
+			'post_status' => 'any',
+			'post_type'   => $post_type,
+		);
+		$query      = new WP_Query( $local_args );
+		if ( isset( $query->posts ) && ! empty( $query->posts ) ) {
+			$args['post__not_in'] = $query->posts;
+		}
+		return $args;
+	}
+
+
 }
