@@ -1,4 +1,4 @@
-/*! WP Sitempa Control - v1.0.3
+/*! WP Sitempa Control - v1.0.4
  * http://iworks.pl/
  * Copyright (c) 2022; * Licensed GPLv2+
  */
