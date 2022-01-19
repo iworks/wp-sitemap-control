@@ -1,6 +1,6 @@
 /*! WP Sitempa Control - v1.0.3
  * http://iworks.pl/
- * Copyright (c) 2021; * Licensed GPLv2+
+ * Copyright (c) 2022; * Licensed GPLv2+
  */
 jQuery(document).ready(function($) {
     $('#wpsmc_post_type, #wpsmc_taxonomy').on('change', function() {
