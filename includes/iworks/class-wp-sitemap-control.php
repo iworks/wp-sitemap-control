@@ -364,7 +364,7 @@ class sitemap_control extends iworks {
 			array( $this, 'meta_box_html' ),
 			$post_type,
 			'side',
-			'low',
+			'low'
 		);
 	}
 

@@ -82,7 +82,9 @@ function sitemap_control_get_options_object() {
 	$sitemap_control_options = new iworks_options();
 	$sitemap_control_options->set_option_function_name( 'sitemap_control_options' );
 	$sitemap_control_options->set_option_prefix( WPSMC_PREFIX );
-	$sitemap_control_options->set_plugin( basename( __FILE__ ) );
+	if ( method_exists( $sitemap_control_options, 'set_plugin' ) ) {
+		$sitemap_control_options->set_plugin( basename( __FILE__ ) );
+	}
 	return $sitemap_control_options;
 }
 
