@@ -69,6 +69,9 @@ A sitemap is a file where you provide information about the pages, videos, and o
 
 == Changelog ==
 
+= 1.0.5 (2022-01-21) =
+* Updated iWorks Options to 2.8.0.
+
 = 1.0.4 (2022-01-20) =
 * Fixed problem with `set_plugin` method.
 
