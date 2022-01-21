@@ -15,10 +15,11 @@ WP Sitemap Control allow choosing which public post types or taxonomies should b
 
 The plugin allows you to control which post types should be included in the [WordPress sitemap][]. By default on build-in sitemap are all public post types and taxonomies, but now you can include or exclude the selected type of content from your sitemap. [Learn about sitemaps][].
 
-You can exclude single entries too.
+The configuration allows you to turn off individual content from the sitemap - an example is "Privacy Policy", which we do not need to have in our sitemap, and by combining the plugin capabilities [Simple SEO Improvements][] we can also avoid indexing and archiving it.
 
 [WordPress sitemap]: https://make.wordpress.org/core/2020/07/22/new-xml-sitemaps-functionality-in-wordpress-5-5/
 [Learn about sitemaps]: https://developers.google.com/search/docs/advanced/sitemaps/overview
+[Simple SEO Improvements]: https://wordpress.org/plugins/simple-seo-improvements/
 
 == Installation ==
 
@@ -65,6 +66,11 @@ The site needs to be public. If you ask for no indexing, then a sitemap is not a
 A sitemap is a file where you provide information about the pages, videos, and other files on your site. Search engines read this file to more intelligently crawl your site.
 
 == Screenshots ==
+
+1. Global configuration - post types settings.
+1. Global configuration - taxonomies settings.
+1. Global configuration - misc settings.
+1. Post edit screen - exclude from sitemap.xml
 
 
 == Changelog ==

@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: WP Sitemap Control PLUGIN_VERSION\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/wp-sitemap-control\n"
-"POT-Creation-Date: 2022-01-19 09:11:03+00:00\n"
+"POT-Creation-Date: 2022-01-21 09:53:09+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -118,39 +118,40 @@ msgstr ""
 msgid "An error occurred while getting the configuration."
 msgstr ""
 
-#: includes/iworks/options/options.php:749
-msgid "Upload image"
+#: includes/iworks/options/options.php:752
+#: includes/iworks/options/options.php:1753
+msgid "Select Image"
 msgstr ""
 
-#: includes/iworks/options/options.php:755
+#: includes/iworks/options/options.php:757
 msgid "Delete image"
 msgstr ""
 
-#: includes/iworks/options/options.php:841
+#: includes/iworks/options/options.php:843
 msgid "Save Changes"
 msgstr ""
 
-#: includes/iworks/options/options.php:1645
+#: includes/iworks/options/options.php:1647
 msgid "Country"
 msgstr ""
 
-#: includes/iworks/options/options.php:1646
+#: includes/iworks/options/options.php:1648
 msgid "City"
 msgstr ""
 
-#: includes/iworks/options/options.php:1647
+#: includes/iworks/options/options.php:1649
 msgid "Street"
 msgstr ""
 
-#: includes/iworks/options/options.php:1648
+#: includes/iworks/options/options.php:1650
 msgid "ZIP code"
 msgstr ""
 
-#: includes/iworks/options/options.php:1799
+#: includes/iworks/options/options.php:1806
 msgid "OFF"
 msgstr ""
 
-#: includes/iworks/options/options.php:1800
+#: includes/iworks/options/options.php:1807
 msgid "ON"
 msgstr ""
 
