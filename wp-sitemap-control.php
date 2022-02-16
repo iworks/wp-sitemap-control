@@ -8,7 +8,7 @@
  * @license           GPL-2.0-or-later
  *
  * @wordpress-plugin
- * Plugin Name:       WP Share Control
+ * Plugin Name:       WP Sitemap Control
  * Plugin URI:        PLUGIN_URI
  * Description:       PLUGIN_DESCRIPTION
  * Version:           PLUGIN_VERSION

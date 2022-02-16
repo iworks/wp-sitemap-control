@@ -1,7 +1,7 @@
 === WP Sitemap Control ===
 Contributors: iworks
 Donate link: https://ko-fi.com/iworks?utm_source=wp-sitemap-control&utm_medium=readme-donate
-Tags: sitemap.xml, sitemap
+Tags: sitemap.xml, sitemap, post type, post types
 Requires at least: 5.5
 Tested up to: 5.9
 Stable tag: PLUGIN_VERSION
