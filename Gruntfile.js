@@ -269,6 +269,7 @@ module.exports = function( grunt ) {
                     { match: /AUTHOR_NAME/g, replace: '<%= pkg.author[0].name %>' },
                     { match: /AUTHOR_URI/g, replace: '<%= pkg.author[0].uri %>' },
                     { match: /BUILDTIME/g, replace: buildtime },
+                    { match: /IWORKS_OPTION_TEXTDOMAIN/g, replace: '<%= pkg.name %>' },
                     { match: /IWORKS_RATE_TEXTDOMAIN/g, replace: '<%= pkg.name %>' },
                     { match: /PLUGIN_DESCRIPTION/g, replace: '<%= pkg.description %>' },
                     { match: /PLUGIN_NAME/g, replace: '<%= pkg.name %>' },

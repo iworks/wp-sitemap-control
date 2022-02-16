@@ -1,4 +1,4 @@
-/*! WP Sitempa Control - v1.0.5
+/*! WP Sitemap Control - v1.0.5
  * http://iworks.pl/
  * Copyright (c) 2022; * Licensed GPLv2+ */
 jQuery(document).ready(function($) {
