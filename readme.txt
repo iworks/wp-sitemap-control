@@ -84,7 +84,7 @@ A sitemap is a file where you provide information about the pages, videos, and o
 
 == Changelog ==
 
-Project maintained on github at [iworks/og](https://github.com/iworks/wp-sitemap-control).
+Project maintained on github at [iworks/wp-sitemap-control](https://github.com/iworks/wp-sitemap-control).
 
 = 1.0.7 (2024-02-16) =
 * Missing translation domain names have been added.
