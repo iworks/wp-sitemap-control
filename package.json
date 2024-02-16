@@ -3,7 +3,7 @@
     "title": "WP Sitemap Control",
     "tagline": "WP Sitemap Control allow choosing which public post types or taxonomies should be able in the /wp-sitemap.xml",
     "description": "More control over post types on WordPress sitemap.xml.",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "homepage": "https://github.com/iworks/wp-sitemap-control",
     "author": [
         {

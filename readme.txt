@@ -88,9 +88,11 @@ Project maintained on github at [iworks/og](https://github.com/iworks/wp-sitemap
 
 = 1.0.7 (2024-02-16) =
 * Missing translation domain names have been added.
+* The function `date()` has been replaced by the function `gmdate()`.
 * The [iWorks Options](https://github.com/iworks/wordpress-options-class) module has been updated to 2.9.1.
 * The [iWorks Rate](https://github.com/iworks/iworks-rate) module has been updated to 2.1.8.
-* The function `date()` has been replaced by the function `gmdate()`.
+* The minimum PHP version has been bumped up from 7.2 to 8.0.
+* The minimum WordPress version has been bumped up from 5.0 to 6.0.
 
 = 1.0.6 (2022-02-16) =
 * Cleaned plugin headers.

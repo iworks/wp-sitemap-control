@@ -1,4 +1,4 @@
-/*! WP Sitemap Control - v1.0.6
+/*! WP Sitemap Control - v1.0.7
  * https://github.com/iworks/wp-sitemap-control
  * Copyright (c) 2024; * Licensed GPL-3.0 */
 jQuery(document).ready(function($) {
