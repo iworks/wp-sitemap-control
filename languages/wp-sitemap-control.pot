@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: WP Sitemap Control PLUGIN_VERSION\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/wp-sitemap-control\n"
-"POT-Creation-Date: 2024-02-16 07:39:09+00:00\n"
+"POT-Creation-Date: 2024-02-16 07:49:47+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "Sitemap"
 msgstr ""
 
-#: etc/options.php:18 etc/options.php:146
+#: etc/options.php:18 etc/options.php:154
 msgid "We are waiting for your message"
 msgstr ""
 
@@ -45,7 +45,7 @@ msgstr ""
 msgid "Switch all"
 msgstr ""
 
-#: etc/options.php:55
+#: etc/options.php:55 etc/options.php:90
 msgid "Enable"
 msgstr ""
 
@@ -57,39 +57,35 @@ msgstr ""
 msgid "Taxonomies"
 msgstr ""
 
-#: etc/options.php:84
-msgid "Taxonomies List"
-msgstr ""
-
-#: etc/options.php:101
+#: etc/options.php:109
 msgid "Misc"
 msgstr ""
 
-#: etc/options.php:106
+#: etc/options.php:114
 msgid "Users"
 msgstr ""
 
-#: etc/options.php:114
+#: etc/options.php:122
 msgid "Last modified"
 msgstr ""
 
-#: etc/options.php:118
+#: etc/options.php:126
 msgid "Add the last modified date for entries."
 msgstr ""
 
-#: etc/options.php:130
+#: etc/options.php:138
 msgid "Below are some links to help spread this plugin to other users"
 msgstr ""
 
-#: etc/options.php:132
+#: etc/options.php:140
 msgid "Give it a five stars on WordPress.org"
 msgstr ""
 
-#: etc/options.php:133
+#: etc/options.php:141
 msgid "Link to it so others can easily find it"
 msgstr ""
 
-#: etc/options.php:148
+#: etc/options.php:156
 msgid "WordPress Help Forum"
 msgstr ""
 
@@ -274,12 +270,12 @@ msgstr ""
 msgid "AUTHOR_URI"
 msgstr ""
 
-#: etc/options.php:133
+#: etc/options.php:141
 msgctxt "plugin home page on WordPress.org"
 msgid "https://wordpress.org/plugins/wp-sitemap-control/"
 msgstr ""
 
-#: etc/options.php:148
+#: etc/options.php:156
 msgctxt "link to support forum on WordPress.org"
 msgid "https://wordpress.org/support/plugin/wp-sitemap-control/"
 msgstr ""
