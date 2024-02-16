@@ -2,14 +2,13 @@
 Contributors: iworks
 Donate link: https://ko-fi.com/iworks?utm_source=wp-sitemap-control&utm_medium=readme-donate
 Tags: sitemap.xml, sitemap, post type, post types
-Requires at least: 5.5
-Tested up to: 5.9
+Requires at least: PLUGIN_REQUIRES_WORDPRESS
+Tested up to: PLUGIN_TESTED_WORDPRESS
 Stable tag: PLUGIN_VERSION
-Requires PHP: 7.0
+Requires PHP: PLUGIN_REQUIRES_PHP
 License: GPLv3 or later
-License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-WP Sitemap Control allow choosing which public post types or taxonomies should be able in the /wp-sitemap.xml
+PLUGIN_TAGLINE
 
 == Description ==
 
@@ -20,6 +19,16 @@ The configuration allows you to turn off individual content from the sitemap - a
 [WordPress sitemap]: https://make.wordpress.org/core/2020/07/22/new-xml-sitemaps-functionality-in-wordpress-5-5/
 [Learn about sitemaps]: https://developers.google.com/search/docs/advanced/sitemaps/overview
 [Simple SEO Improvements]: https://wordpress.org/plugins/simple-seo-improvements/
+
+= See room for improvement? =
+
+Great! There are several ways you can get involved to help make PLUGIN_TITLE better:
+
+1. **Report Bugs:** If you find a bug, error or other problem, please report it! You can do this by [creating a new topic](https://wordpress.org/support/plugin/wp-sitemap-control/) in the plugin forum. Once a developer can verify the bug by reproducing it, they will create an official bug report in [GitHub](PLUGIN_GITHUB_WEBSITE) where the bug will be worked on.
+2. **Suggest New Features:** Have an awesome idea? Please share it! Simply [create a new topic](https://wordpress.org/support/plugin/wp-sitemap-control/) in the plugin forum to express your thoughts on why the feature should be included and get a discussion going around your idea.
+3. **Issue Pull Requests:** If you're a developer, the easiest way to get involved is to help out on [issues already reported](PLUGIN_GITHUB_WEBSITE/issues) in GitHub. Be sure to check out the [contributing guide](PLUGIN_GITHUB_WEBSITE/blob/master/contributing.md) for developers.
+
+Thank you for wanting to make PLUGIN_TITLE better for everyone!
 
 == Installation ==
 
@@ -74,6 +83,16 @@ A sitemap is a file where you provide information about the pages, videos, and o
 
 
 == Changelog ==
+
+Project maintained on github at [iworks/og](https://github.com/iworks/wp-sitemap-control).
+
+= 1.0.8 (2024-02-16) =
+* The [iWorks Options](https://github.com/iworks/wordpress-options-class) module has been updated to 2.9.1.
+* The [iWorks Rate](https://github.com/iworks/iworks-rate) module has been updated to 2.1.8.
+
+= 1.0.7 (2023-11-20) =
+* The [iWorks Options](https://github.com/iworks/wordpress-options-class) module has been updated to 2.8.7.
+* The [iWorks Rate](https://github.com/iworks/iworks-rate) module has been updated to 2.1.3.
 
 = 1.0.6 (2022-02-16) =
 * Cleaned plugin headers.
