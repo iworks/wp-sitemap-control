@@ -259,11 +259,11 @@ class sitemap_control extends iworks {
 					admin_url( 'options-general.php' )
 				);
 				$links[] = sprintf(
-					'<a href="%s">' . __( 'Settings' ) . '</a>',
+					'<a href="%s">' . __( 'Settings', 'wp-sitemap-control' ) . '</a>',
 					esc_url( $url )
 				);
 			}
-			$links[] = '<a href="http://iworks.pl/donate/wp-sitemap-control.php">' . __( 'Donate' ) . '</a>';
+			$links[] = '<a href="http://iworks.pl/donate/wp-sitemap-control.php">' . __( 'Donate', 'wp-sitemap-control' ) . '</a>';
 
 		}
 		return $links;
@@ -294,7 +294,7 @@ class sitemap_control extends iworks {
 	 */
 	public function add_last_mod( $entry, $post ) {
 		if ( $this->options->get_option( 'lastmod' ) ) {
-			$entry['lastmod'] = date( 'Y-m-d', strtotime( $post->post_modified_gmt ) );
+			$entry['lastmod'] = gmdate( 'Y-m-d', strtotime( $post->post_modified_gmt ) );
 		}
 		return $entry;
 	}

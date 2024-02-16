@@ -86,13 +86,11 @@ A sitemap is a file where you provide information about the pages, videos, and o
 
 Project maintained on github at [iworks/og](https://github.com/iworks/wp-sitemap-control).
 
-= 1.0.8 (2024-02-16) =
+= 1.0.7 (2024-02-16) =
+* Missing translation domain names have been added.
 * The [iWorks Options](https://github.com/iworks/wordpress-options-class) module has been updated to 2.9.1.
 * The [iWorks Rate](https://github.com/iworks/iworks-rate) module has been updated to 2.1.8.
-
-= 1.0.7 (2023-11-20) =
-* The [iWorks Options](https://github.com/iworks/wordpress-options-class) module has been updated to 2.8.7.
-* The [iWorks Rate](https://github.com/iworks/iworks-rate) module has been updated to 2.1.3.
+* The function `date()` has been replaced by the function `gmdate()`.
 
 = 1.0.6 (2022-02-16) =
 * Cleaned plugin headers.

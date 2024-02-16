@@ -79,19 +79,27 @@ function sitemap_control_options() {
 		'th'      => __( 'Switch all', 'wp-sitemap-control' ),
 		'classes' => array( 'switch-button' ),
 	);
-	$options['index']['options'][] = array(
-		'type'  => 'subheading',
-		'label' => __( 'Taxonomies List', 'wp-sitemap-control' ),
-	);
 	foreach ( get_taxonomies( array( 'public' => true ), 'objects' ) as $slug => $obj ) {
+		$options['index']['options'][] = array(
+			'type'  => 'subheading',
+			'label' => $obj->label,
+		);
 		$options['index']['options'][] = array(
 			'name'              => 'taxonomy_' . $slug,
 			'type'              => 'checkbox',
-			'th'                => $obj->label,
+			'th'                => __( 'Enable', 'wp-sitemap-control' ),
 			'default'           => in_array( $slug, array( 'post_tag', 'category' ) ),
 			'sanitize_callback' => 'absint',
 			'classes'           => array( 'switch-button taxonomy' ),
 		);
+		// $options['index']['options'][] = array(
+			// 'name'              => 'taxonomy_exclusion_' . $slug,
+			// 'type'              => 'checkbox',
+			// 'th'                => __( 'Allow exclusion', 'wp-sitemap-control' ),
+			// 'default'           => 0,
+			// 'sanitize_callback' => 'absint',
+			// 'classes'           => array( 'switch-button post-type' ),
+		// );
 	}
 	/**
 	 * Misc
