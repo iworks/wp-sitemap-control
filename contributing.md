@@ -103,11 +103,11 @@ Please use the [git flow for pull requests](#git-flow) and follow [WordPress Cod
 
    ```bash
    # Clone your fork of the repo into the current directory
-   git clone git@github.com:<YOUR_USERNAME>/og.git
+   git clone git@github.com:<YOUR_USERNAME>/wp-sitemap-control.git
    # Navigate to the newly cloned directory
    cd og
    # Assign the original repo to a remote called "upstream"
-   git remote add upstream https://github.com/iworks/og
+   git remote add upstream https://github.com/iworks/wp-sitemap-control
    ```
 
 2. If you cloned a while ago, get the latest changes from upstream:
