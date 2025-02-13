@@ -1,6 +1,6 @@
-/*! WP Sitemap Control - v1.0.7
+/*! WP Sitemap Control - 1.1.0
  * https://github.com/iworks/wp-sitemap-control
- * Copyright (c) 2024; * Licensed GPL-3.0 */
+ * Copyright (c) 2025; * Licensed GPL-3.0 */
 jQuery(document).ready(function($) {
     $('#wpsmc_post_type, #wpsmc_taxonomy').on('change', function() {
         if ($(this).hasClass('loaded')) {

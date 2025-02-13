@@ -244,58 +244,8 @@ module.exports = function(grunt) {
 			}
 		},
 
-		// CSS - Compile a .scss file into a normal .css file.
-		sass: {
-			all: {
-				options: {
-					'sourcemap=none': true, // 'sourcemap': 'none' does not work...
-					unixNewlines: true,
-					style: 'expanded'
-				},
-				files: conf.css_files_compile
-			}
-		},
-		concat_css: {
-			options: {},
-			all: {
-				src: ['assets/styles/frontend/settings.css', 'assets/styles/frontend/*.css'],
-				dest: 'assets/styles/<%= pkg.name %>-frontend.css'
-			}
-		},
-
-		// CSS - Minify all .css files.
-		cssmin: {
-			options: {
-				banner: '/*! <%= pkg.title %> - <%= pkg.version %>\n' +
-				' * <%= pkg.homepage %>\n' +
-				' * Copyright (c) <%= grunt.template.today("yyyy") %>;\n' +
-				' * Licensed <%= pkg.license %>' +
-				' */\n',
-				mergeIntoShorthands: false
-			},
-			minify: {
-				expand: true,
-				src: ['*.css', '!*.min.css'],
-				cwd: 'assets/styles/',
-				dest: 'assets/styles/',
-				ext: '.min.css',
-				extDot: 'last'
-			}
-		},
-
 		// WATCH - Watch filesystem for changes during development.
 		watch: {
-			sass: {
-				files: [
-					'assets/sass/*.scss',
-					'assets/sass/**/*.scss',
-					'inc/modules/**/*.scss'
-				],
-				tasks: ['sass', 'concat_css', 'cssmin'],
-				options: {
-					debounceDelay: 500
-				}
-			},
 			scripts: {
 				files: [
 					'assets/scripts/src/**/*.js',
@@ -466,9 +416,8 @@ module.exports = function(grunt) {
 
 	// Default task.
 
-	grunt.registerTask('default', ['clean:temp', 'concat', 'uglify', 'sass', 'concat_css', 'cssmin']);
+	grunt.registerTask('default', ['clean:temp', 'concat', 'uglify']);
 	grunt.registerTask('js', ['concat', 'uglify']);
-	grunt.registerTask('css', ['sass', 'concat_css', 'cssmin']);
 	grunt.registerTask('i18n', ['checktextdomain', 'makepot']);
 
 	grunt.registerTask(
