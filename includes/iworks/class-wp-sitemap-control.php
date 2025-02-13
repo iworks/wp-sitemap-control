@@ -25,9 +25,9 @@ if ( class_exists( 'sitemap_control' ) ) {
 	return;
 }
 
-require_once dirname( dirname( __FILE__ ) ) . '/class-iworks.php';
+require_once dirname( __FILE__ ) . '/class-wp-sitemap-control-base.php';
 
-class sitemap_control extends iworks {
+class sitemap_control extends iworks_wp_sitemap_control_base {
 
 	/**
 	 * Capability for the plugin.
@@ -73,6 +73,7 @@ class sitemap_control extends iworks {
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
 		add_action( 'edit_attachment', array( $this, 'save_data' ) );
 		add_action( 'init', array( $this, 'register' ) );
+		add_action( 'init', array( $this, 'action_init_register_iworks_rate' ), PHP_INT_MAX );
 		add_action( 'load-settings_page_wpsmc_index', array( $this, 'admin_enqueue' ) );
 		add_action( 'save_post', array( $this, 'save_data' ) );
 		add_filter( 'wp_sitemaps_posts_query_args', array( $this, 'filter_wp_sitemaps_posts_query_args' ), 10, 2 );
@@ -93,6 +94,16 @@ class sitemap_control extends iworks {
 		 * change logo for rate
 		 */
 		add_filter( 'iworks_rate_notice_logo_style', array( $this, 'filter_plugin_logo' ), 10, 2 );
+		/**
+		 * load github class
+		 *
+		 * @since 1.0.8
+		 */
+		$filename = __DIR__ . '/class-wp-sitemap-control-github.php';
+		if ( is_file( $filename ) ) {
+			include_once $filename;
+			new iworks_wp_sitemap_control_github();
+		}
 	}
 
 	public function wp_head_add_sitemap() {
@@ -435,7 +446,7 @@ class sitemap_control extends iworks {
 		if ( ! $this->check_nonce() ) {
 			return;
 		}
-		$value = filter_input( INPUT_POST, $this->meta_name, FILTER_SANITIZE_STRING );
+		$value = filter_input( INPUT_POST, $this->meta_name );
 		$value = $this->sanitize_include_exclude_value( $value );
 		$this->update_single_post_meta( $post_id, $this->meta_name, $value );
 	}
@@ -446,7 +457,7 @@ class sitemap_control extends iworks {
 	 * @since 1.0.2
 	 */
 	private function check_nonce() {
-		$value = filter_input( INPUT_POST, $this->nonce_name, FILTER_SANITIZE_STRING );
+		$value = filter_input( INPUT_POST, $this->nonce_name );
 		if ( ! empty( $value ) ) {
 			return wp_verify_nonce( $value, __CLASS__ );
 		}
@@ -490,5 +501,21 @@ class sitemap_control extends iworks {
 		return $args;
 	}
 
+	/**
+	 * register plugin to iWorks Rate Helper
+	 *
+	 * @since 1.0.0
+	 */
+	public function action_init_register_iworks_rate() {
+		if ( ! class_exists( 'iworks_rate' ) ) {
+			include_once dirname( __FILE__ ) . '/rate/rate.php';
+		}
+		do_action(
+			'iworks-register-plugin',
+			plugin_basename( $this->plugin_file ),
+			__( 'WP Sitemap Control', 'wp-sitemap-control' ),
+			'wp-sitemap-control'
+		);
+	}
 
 }

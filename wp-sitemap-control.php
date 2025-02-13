@@ -31,11 +31,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'WPSMC_VERSION', 'PLUGIN_VERSION' );
 define( 'WPSMC_PREFIX', 'wpsmc_' );
 
-/**
- * i18n
- */
-load_plugin_textdomain( 'wp-sitemap-control', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
-
 $base     = dirname( __FILE__ );
 $includes = $base . '/includes';
 
@@ -61,7 +56,7 @@ if ( ! class_exists( 'iworks_options' ) ) {
  */
 
 global $sitemap_control_options;
-$sitemap_control_options = sitemap_control_get_options_object();
+$sitemap_control_options = null;
 
 function sitemap_control_get_options_object() {
 	global $sitemap_control_options;
@@ -106,16 +101,4 @@ $sitemap_control = new sitemap_control();
  */
 register_activation_hook( __FILE__, 'sitemap_control_activate' );
 register_deactivation_hook( __FILE__, 'sitemap_control_deactivate' );
-
-/**
- * Ask for vote
- */
-include_once $includes . '/iworks/rate/rate.php';
-do_action(
-	'iworks-register-plugin',
-	plugin_basename( __FILE__ ),
-	__( 'WP Sitemap Control', 'wp-sitemap-control' ),
-	'wp-sitemap-control'
-);
-
 

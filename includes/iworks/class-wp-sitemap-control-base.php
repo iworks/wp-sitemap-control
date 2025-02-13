@@ -27,21 +27,26 @@ if ( class_exists( 'iworks' ) ) {
 	return;
 }
 
-class iworks {
+class iworks_wp_sitemap_control_base {
 
 	protected $dev;
 	protected $meta_prefix = '_';
 	protected $base;
 	protected $dir;
 	protected $version;
+	protected $plugin_file;
 
 	public function __construct() {
 		/**
 		 * static settings
 		 */
 		$this->dev  = ( defined( 'IWORKS_DEV_MODE' ) && IWORKS_DEV_MODE ) ? '' : '.min';
-		$this->base = dirname( __FILE__ );
+		$this->base = dirname( dirname( __FILE__ ) );
 		$this->dir  = basename( dirname( $this->base ) );
+		/**
+		 * plugin ID
+		 */
+		$this->plugin_file = plugin_basename( dirname( $this->base ) . '/wp-sitemap-control.php' );
 	}
 
 	public function get_version( $file = null ) {
