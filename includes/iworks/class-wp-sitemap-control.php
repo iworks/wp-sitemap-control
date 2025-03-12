@@ -99,7 +99,7 @@ class sitemap_control extends iworks_wp_sitemap_control_base {
 		 *
 		 * @since 1.0.8
 		 */
-		$filename = __DIR__ . '/class-wp-sitemap-control-github.php';
+		$filename = __DIR__ . '/wp-sitemap-control/class-iworks-wp-sitemap-control-github.php';
 		if ( is_file( $filename ) ) {
 			include_once $filename;
 			new iworks_wp_sitemap_control_github();

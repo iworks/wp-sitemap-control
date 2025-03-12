@@ -62,7 +62,7 @@ module.exports = function(grunt) {
 			'!assets/scripts/src/**',
 			'!assets/scss/**',
 			'!assets/styles/frontend/**',
-			'!includes/iworks/class-*-github.php',
+			'!includes/iworks/wp-sitemap-control/class-iworks-wp-sitemap-control-github.php',
 			'!includes/pro/**',
 			'!languages/*.mo',
 			'!languages/*.po',
