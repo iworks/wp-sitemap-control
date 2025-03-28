@@ -106,7 +106,7 @@ function sitemap_control_options() {
 	 */
 	$options['index']['options'][] = array(
 		'type'  => 'heading',
-		'label' => __( 'Misc', 'sitemap' ),
+		'label' => __( 'Misc', 'wp-sitemap-control' ),
 	);
 	$options['index']['options'][] = array(
 		'name'              => 'users',
