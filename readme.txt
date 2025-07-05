@@ -13,11 +13,21 @@ PLUGIN_TAGLINE
 
 == Description ==
 
-The plugin allows you to control which post types should be included in the [WordPress sitemap][]. By default on build-in sitemap are all public post types and taxonomies, but now you can include or exclude the selected type of content from your sitemap. [Learn about sitemaps][].
+WP Sitemap Control allows you to easily manage which post types and taxonomies are included in your WordPress site's built-in [sitemap][]. By default, all public post types and taxonomies appear in the [sitemap][], but with this plugin, you can include or exclude specific content types to better control your site's SEO and indexing.
+
+**Key Features:**
+- Include or exclude selected post types and taxonomies from your sitemap.
+- Exclude individual taxonomy terms from the sitemap.
+- Exclude individual entries, such as the Privacy Policy page, from the sitemap.
+- Simple configuration via the WordPress admin menu.
+- Compatible with WordPress 6.0+ and PHP 8.0+.
+- Supports translation and is open source.
+
+This plugin is ideal for site owners who want more granular control over their sitemap and wish to prevent certain content from being indexed or archived by search engines. [Learn more about sitemaps][].
 
 The configuration allows you to turn off individual content from the sitemap - an example is "Privacy Policy", which we do not need to have in our sitemap, and by combining the plugin capabilities [Simple SEO Improvements][] we can also avoid indexing and archiving it.
 
-[WordPress sitemap]: https://make.wordpress.org/core/2020/07/22/new-xml-sitemaps-functionality-in-wordpress-5-5/
+[sitemap]: https://make.wordpress.org/core/2020/07/22/new-xml-sitemaps-functionality-in-wordpress-5-5/
 [Learn about sitemaps]: https://developers.google.com/search/docs/advanced/sitemaps/overview
 [Simple SEO Improvements]: https://wordpress.org/plugins/simple-seo-improvements/
 
@@ -86,6 +96,11 @@ A sitemap is a file where you provide information about the pages, videos, and o
 == Changelog ==
 
 Project maintained on github at [iworks/wp-sitemap-control](https://github.com/iworks/wp-sitemap-control).
+
+= 1.2.0 (2025-07-05) =
+* Exclude taxonomies from sitemap.
+* Updated the [iWorks Rate](https://github.com/iworks/iworks-rate) module to version 2.3.1.
+* Updated the [iWorks Options](https://github.com/iworks/wordpress-options-class) module to version 3.0.7.
 
 = 1.1.2 (2025-03-28) =
 * Updated the [iWorks Options](https://github.com/iworks/wordpress-options-class) module to version 2.9.9.
