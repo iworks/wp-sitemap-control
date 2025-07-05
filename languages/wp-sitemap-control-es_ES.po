@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Plugins - WP Sitemap Control - Development (trunk)\n"
 "Report-Msgid-Bugs-To: http://iworks.pl\n"
-"POT-Creation-Date: 2025-07-02 06:41:59+00:00\n"
+"POT-Creation-Date: 2025-07-05 15:11:11+00:00\n"
 "PO-Revision-Date: 2020-11-27 06:39:31+0000\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -14,10 +14,11 @@ msgstr ""
 "X-Generator: GlotPress/4.0.1\n"
 
 #: etc/options.php:10
+#: includes/iworks/wp-sitemap-control/class-iworks-wp-sitemap-control-taxonomies.php:168
 msgid "Sitemap"
 msgstr "Mapa del sitio"
 
-#: etc/options.php:18 etc/options.php:169
+#: etc/options.php:18 etc/options.php:161
 msgid "We are waiting for your message"
 msgstr ""
 
@@ -45,44 +46,44 @@ msgstr ""
 msgid "Taxonomies"
 msgstr "Taxonomías"
 
-#: etc/options.php:109 etc/options.php:113
+#: etc/options.php:101 etc/options.php:105
 msgid "Misc"
 msgstr "Varios"
 
-#: etc/options.php:118
+#: etc/options.php:110
 msgid "Users"
 msgstr "Usuarios"
 
-#: etc/options.php:126
+#: etc/options.php:118
 msgid "Last modified"
 msgstr "Última modificación"
 
-#: etc/options.php:130
+#: etc/options.php:122
 msgid "Add the last modified date for entries."
 msgstr "Añade a los registros la fecha de la última modificación."
 
-#: etc/options.php:153
+#: etc/options.php:145
 msgid "Below are some links to help spread this plugin to other users"
 msgstr ""
 
-#: etc/options.php:155
+#: etc/options.php:147
 msgid "Give it a five stars on WordPress.org"
 msgstr ""
 
-#: etc/options.php:156
+#: etc/options.php:148
 msgid "Link to it so others can easily find it"
 msgstr ""
 
-#: etc/options.php:171
+#: etc/options.php:163
 msgid "WordPress Help Forum"
 msgstr ""
 
-#: includes/iworks/class-wp-sitemap-control.php:274
+#: includes/iworks/class-wp-sitemap-control.php:281
 #: includes/iworks/rate/rate.php:133
 msgid "Settings"
 msgstr ""
 
-#: includes/iworks/class-wp-sitemap-control.php:278
+#: includes/iworks/class-wp-sitemap-control.php:285
 msgid "Donate"
 msgstr ""
 
@@ -90,20 +91,22 @@ msgstr ""
 msgid "WP Sitemap Control"
 msgstr "WP Sitemap Control"
 
-#: includes/iworks/class-wp-sitemap-control.php:416
+#: includes/iworks/class-wp-sitemap-control.php:423
 msgid "Include in sitemap"
 msgstr ""
 
-#: includes/iworks/class-wp-sitemap-control.php:426
+#: includes/iworks/class-wp-sitemap-control.php:433
+#: includes/iworks/wp-sitemap-control/class-iworks-wp-sitemap-control-taxonomies.php:111
+#: includes/iworks/wp-sitemap-control/class-iworks-wp-sitemap-control-taxonomies.php:131
 msgid "Exclude from sitemap"
 msgstr ""
 
-#: includes/iworks/class-wp-sitemap-control.php:531
+#: includes/iworks/class-wp-sitemap-control.php:538
 #, fuzzy
 msgid "WP Sitemap"
 msgstr "Mapa del sitio"
 
-#: includes/iworks/class-wp-sitemap-control.php:536
+#: includes/iworks/class-wp-sitemap-control.php:550
 msgid "URL"
 msgstr ""
 
@@ -313,6 +316,23 @@ msgid ""
 "you for all the ratings, reviews and donates."
 msgstr ""
 
+#: includes/iworks/wp-sitemap-control/class-iworks-wp-sitemap-control-taxonomies.php:114
+#: includes/iworks/wp-sitemap-control/class-iworks-wp-sitemap-control-taxonomies.php:139
+msgid "Check this to exclude this term from the sitemap."
+msgstr ""
+
+#: includes/iworks/wp-sitemap-control/class-iworks-wp-sitemap-control-taxonomies.php:136
+msgid "Exclude this term from the sitemap"
+msgstr ""
+
+#: includes/iworks/wp-sitemap-control/class-iworks-wp-sitemap-control-taxonomies.php:184
+msgid "Excluded from sitemap"
+msgstr ""
+
+#: includes/iworks/wp-sitemap-control/class-iworks-wp-sitemap-control-taxonomies.php:185
+msgid "Included in sitemap"
+msgstr ""
+
 #. Plugin URI of the plugin/theme
 msgid "PLUGIN_URI"
 msgstr ""
@@ -329,17 +349,17 @@ msgstr ""
 msgid "AUTHOR_URI"
 msgstr ""
 
-#: etc/options.php:156
+#: etc/options.php:148
 msgctxt "plugin home page on WordPress.org"
 msgid "https://wordpress.org/plugins/wp-sitemap-control/"
 msgstr ""
 
-#: etc/options.php:171
+#: etc/options.php:163
 msgctxt "link to support forum on WordPress.org"
 msgid "https://wordpress.org/support/plugin/wp-sitemap-control/"
 msgstr ""
 
-#: includes/iworks/class-wp-sitemap-control.php:113
+#: includes/iworks/class-wp-sitemap-control.php:120
 msgctxt "sitemap tag title in html head"
 msgid "Sitemap"
 msgstr ""
