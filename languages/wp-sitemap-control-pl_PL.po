@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Plugins - WP Sitemap Control - Development (trunk)\n"
 "Report-Msgid-Bugs-To: http://iworks.pl\n"
-"POT-Creation-Date: 2025-07-05 15:11:11+00:00\n"
-"PO-Revision-Date: 2025-02-13 18:34:39+0000\n"
+"POT-Creation-Date: 2025-07-05 15:43:33+00:00\n"
+"PO-Revision-Date: 2025-07-05 15:42:13+0000\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -103,17 +103,16 @@ msgid "Exclude from sitemap"
 msgstr "Wyklucz z mapy witryny"
 
 #: includes/iworks/class-wp-sitemap-control.php:538
-#, fuzzy
 msgid "WP Sitemap"
-msgstr "Mapa witryny"
+msgstr "Mapa witryny WP"
 
 #: includes/iworks/class-wp-sitemap-control.php:550
 msgid "URL"
-msgstr ""
+msgstr "Adres url"
 
 #: includes/iworks/options/options.php:176
 msgid "No Page Title"
-msgstr ""
+msgstr "Brak tytułu strony"
 
 #: includes/iworks/options/options.php:341
 msgid "An error occurred while getting the configuration."
@@ -185,7 +184,7 @@ msgstr "https://pl.wordpress.org/plugins/og/"
 #: includes/iworks/rate/templates/happy-anniversary/anniversary.php:21
 #: includes/iworks/rate/templates/happy-anniversary/first-year.php:21
 msgid "🎉 Happy Anniversary! 🎉"
-msgstr ""
+msgstr "🎉 Wszystkiego najlepszego z okazji rocznicy! 🎉"
 
 #: includes/iworks/rate/templates/happy-anniversary/anniversary.php:23
 msgid ""
@@ -193,6 +192,9 @@ msgid ""
 "you so much for being part of our journey! We truly appreciate your support "
 "and hope the plugin has made your work easier and more enjoyable."
 msgstr ""
+"Wow, minął już cały rok odkąd używasz naszej wtyczki — bardzo dziękujemy za "
+"bycie częścią naszej wspólnej przygody! Naprawdę doceniam Twoje wsparcie i "
+"mam nadzieję, że wtyczka ułatwiła Ci pracę i uczyniła ją przyjemniejszą."
 
 #: includes/iworks/rate/templates/happy-anniversary/anniversary.php:24
 #: includes/iworks/rate/templates/happy-anniversary/first-year.php:24
@@ -202,21 +204,26 @@ msgid ""
 "coffee. Every little bit helps us keep improving and adding new features for "
 "awesome users like you!"
 msgstr ""
+"Jeśli nasza wtyczka okazała się pomocna i chcesz wesprzeć jej dalszy rozwój, "
+"byłbym niezmiernie wdzięczny, gdybyś rozważyła lub rozważył postawienie mi "
+"kawy. Każda odrobina pomaga nam w ciągłym doskonaleniu i dodawaniu nowych "
+"funkcji dla wspaniałych użytkowników, takich jak Ty!"
 
 #: includes/iworks/rate/templates/happy-anniversary/anniversary.php:25
 #: includes/iworks/rate/templates/happy-anniversary/first-year.php:25
 msgid "☕ Buy Me a Coffee"
-msgstr ""
+msgstr "☕ Kup mi kawę"
 
 #: includes/iworks/rate/templates/happy-anniversary/anniversary.php:26
 #: includes/iworks/rate/templates/happy-anniversary/first-year.php:26
 msgid "Thank you for your support and for making this community amazing!"
 msgstr ""
+"Dziękuję za Twoje wsparcie i za to, że tworzysz niesamowitą społeczność!"
 
 #: includes/iworks/rate/templates/happy-anniversary/anniversary.php:30
 #: includes/iworks/rate/templates/happy-anniversary/first-year.php:30
 msgid "With gratitude"
-msgstr ""
+msgstr "Z wdzięcznością"
 
 #: includes/iworks/rate/templates/happy-anniversary/anniversary.php:34
 #: includes/iworks/rate/templates/happy-anniversary/first-year.php:34
@@ -226,7 +233,7 @@ msgstr "Marcin Pietrzak"
 #: includes/iworks/rate/templates/happy-anniversary/anniversary.php:36
 #: includes/iworks/rate/templates/happy-anniversary/first-year.php:36
 msgid "Plugin Author"
-msgstr ""
+msgstr "Autor wtyczki"
 
 #: includes/iworks/rate/templates/happy-anniversary/first-year.php:23
 msgid ""
@@ -234,6 +241,9 @@ msgid ""
 "you so much for being part of our journey! We hope it’s made your work "
 "easier and more enjoyable."
 msgstr ""
+"Wow, minął już cały rok odkąd używasz naszej wtyczki — bardzo dziękujemy za "
+"bycie częścią naszej wspólnej przygody! Mam nadzieję, że wtyczka ułatwiła "
+"Twoją pracę i uczyniła ją przyjemniejszą."
 
 #: includes/iworks/rate/templates/plugins/og.php:4
 msgid "Would you like to boost your website sharing abilities?"
@@ -339,20 +349,17 @@ msgstr ""
 #: includes/iworks/wp-sitemap-control/class-iworks-wp-sitemap-control-taxonomies.php:114
 #: includes/iworks/wp-sitemap-control/class-iworks-wp-sitemap-control-taxonomies.php:139
 msgid "Check this to exclude this term from the sitemap."
-msgstr ""
+msgstr "Zaznacz to pole, aby wykluczyć termin z mapy witryny."
 
 #: includes/iworks/wp-sitemap-control/class-iworks-wp-sitemap-control-taxonomies.php:136
-#, fuzzy
 msgid "Exclude this term from the sitemap"
-msgstr "Wyklucz z mapy witryny"
+msgstr "Wyklucz termin z mapy witryny"
 
 #: includes/iworks/wp-sitemap-control/class-iworks-wp-sitemap-control-taxonomies.php:184
-#, fuzzy
 msgid "Excluded from sitemap"
 msgstr "Wyklucz z mapy witryny"
 
 #: includes/iworks/wp-sitemap-control/class-iworks-wp-sitemap-control-taxonomies.php:185
-#, fuzzy
 msgid "Included in sitemap"
 msgstr "Uwzględnij w mapie witryny"
 

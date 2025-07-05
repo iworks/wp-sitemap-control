@@ -1,10 +1,10 @@
-# Translation of Plugins - WP Sitemap Control - Development (trunk) in Spanish (Spain)
-# This file is distributed under the same license as the Plugins - WP Sitemap Control - Development (trunk) package.
+# Translation of Plugins - WP Sitemap Control - Stable (latest release) in Spanish (Spain)
+# This file is distributed under the same license as the Plugins - WP Sitemap Control - Stable (latest release) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Plugins - WP Sitemap Control - Development (trunk)\n"
+"Project-Id-Version: Plugins - WP Sitemap Control - Stable (latest release)\n"
 "Report-Msgid-Bugs-To: http://iworks.pl\n"
-"POT-Creation-Date: 2025-07-05 15:11:11+00:00\n"
+"POT-Creation-Date: 2025-07-05 15:43:33+00:00\n"
 "PO-Revision-Date: 2020-11-27 06:39:31+0000\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -102,9 +102,8 @@ msgid "Exclude from sitemap"
 msgstr ""
 
 #: includes/iworks/class-wp-sitemap-control.php:538
-#, fuzzy
 msgid "WP Sitemap"
-msgstr "Mapa del sitio"
+msgstr ""
 
 #: includes/iworks/class-wp-sitemap-control.php:550
 msgid "URL"
