@@ -92,20 +92,16 @@ function sitemap_control_options() {
 			'sanitize_callback' => 'absint',
 			'classes'           => array( 'switch-button taxonomy' ),
 		);
-		// $options['index']['options'][] = array(
-			// 'name'              => 'taxonomy_exclusion_' . $slug,
-			// 'type'              => 'checkbox',
-			// 'th'                => __( 'Allow exclusion', 'wp-sitemap-control' ),
-			// 'default'           => 0,
-			// 'sanitize_callback' => 'absint',
-			// 'classes'           => array( 'switch-button post-type' ),
-		// );
 	}
 	/**
 	 * Misc
 	 */
 	$options['index']['options'][] = array(
 		'type'  => 'heading',
+		'label' => __( 'Misc', 'wp-sitemap-control' ),
+	);
+	$options['index']['options'][] = array(
+		'type'  => 'subheading',
 		'label' => __( 'Misc', 'wp-sitemap-control' ),
 	);
 	$options['index']['options'][] = array(
@@ -125,6 +121,17 @@ function sitemap_control_options() {
 		'classes'           => array( 'switch-button' ),
 		'description'       => __( 'Add the last modified date for entries.', 'wp-sitemap-control' ),
 	);
+	/**
+	 * Filter options
+	 *
+	 * @since 1.1.3
+	 */
+	$options['index']['options'] = apply_filters( 'iworks/wp-sitemap-control/options', $options['index']['options'] );
+	/**
+	 * Return options
+	 *
+	 * @since 1.0.0
+	 */
 	return $options;
 }
 

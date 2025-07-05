@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.1.2\n"
 "Report-Msgid-Bugs-To: http://iworks.pl\n"
-"POT-Creation-Date: 2025-03-28 09:18:39+00:00\n"
+"POT-Creation-Date: 2025-07-02 06:42:08+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,7 +28,7 @@ msgstr ""
 msgid "Sitemap"
 msgstr ""
 
-#: etc/options.php:18 etc/options.php:154
+#: etc/options.php:18 etc/options.php:169
 msgid "We are waiting for your message"
 msgstr ""
 
@@ -56,44 +56,44 @@ msgstr ""
 msgid "Taxonomies"
 msgstr ""
 
-#: etc/options.php:109
+#: etc/options.php:109 etc/options.php:113
 msgid "Misc"
 msgstr ""
 
-#: etc/options.php:114
+#: etc/options.php:118
 msgid "Users"
 msgstr ""
 
-#: etc/options.php:122
+#: etc/options.php:126
 msgid "Last modified"
 msgstr ""
 
-#: etc/options.php:126
+#: etc/options.php:130
 msgid "Add the last modified date for entries."
 msgstr ""
 
-#: etc/options.php:138
+#: etc/options.php:153
 msgid "Below are some links to help spread this plugin to other users"
 msgstr ""
 
-#: etc/options.php:140
+#: etc/options.php:155
 msgid "Give it a five stars on WordPress.org"
 msgstr ""
 
-#: etc/options.php:141
+#: etc/options.php:156
 msgid "Link to it so others can easily find it"
 msgstr ""
 
-#: etc/options.php:156
+#: etc/options.php:171
 msgid "WordPress Help Forum"
 msgstr ""
 
-#: includes/iworks/class-wp-sitemap-control.php:273
+#: includes/iworks/class-wp-sitemap-control.php:274
 #: includes/iworks/rate/rate.php:133
 msgid "Settings"
 msgstr ""
 
-#: includes/iworks/class-wp-sitemap-control.php:277
+#: includes/iworks/class-wp-sitemap-control.php:278
 msgid "Donate"
 msgstr ""
 
@@ -101,56 +101,68 @@ msgstr ""
 msgid "WP Sitemap Control"
 msgstr ""
 
-#: includes/iworks/class-wp-sitemap-control.php:415
+#: includes/iworks/class-wp-sitemap-control.php:416
 msgid "Include in sitemap"
 msgstr ""
 
-#: includes/iworks/class-wp-sitemap-control.php:425
+#: includes/iworks/class-wp-sitemap-control.php:426
 msgid "Exclude from sitemap"
 msgstr ""
 
-#: includes/iworks/options/options.php:263
+#: includes/iworks/class-wp-sitemap-control.php:531
+msgid "WP Sitemap"
+msgstr ""
+
+#: includes/iworks/class-wp-sitemap-control.php:536
+msgid "URL"
+msgstr ""
+
+#: includes/iworks/options/options.php:176
+msgid "No Page Title"
+msgstr ""
+
+#: includes/iworks/options/options.php:341
 msgid "An error occurred while getting the configuration."
 msgstr ""
 
-#: includes/iworks/options/options.php:842
-#: includes/iworks/options/options.php:1965
+#: includes/iworks/options/options.php:920
+#: includes/iworks/options/options.php:2383
 msgid "Select Image"
 msgstr ""
 
-#: includes/iworks/options/options.php:847
+#: includes/iworks/options/options.php:925
 msgid "Delete image"
 msgstr ""
 
-#: includes/iworks/options/options.php:955
+#: includes/iworks/options/options.php:1033
 msgid "Save Changes"
 msgstr ""
 
-#: includes/iworks/options/options.php:1859
+#: includes/iworks/options/options.php:2256
 msgid "Country"
 msgstr ""
 
-#: includes/iworks/options/options.php:1860
+#: includes/iworks/options/options.php:2257
 msgid "City"
 msgstr ""
 
-#: includes/iworks/options/options.php:1861
+#: includes/iworks/options/options.php:2258
 msgid "Street"
 msgstr ""
 
-#: includes/iworks/options/options.php:1862
+#: includes/iworks/options/options.php:2259
 msgid "ZIP code"
 msgstr ""
 
-#: includes/iworks/options/options.php:2018
+#: includes/iworks/options/options.php:2443
 msgid "OFF"
 msgstr ""
 
-#: includes/iworks/options/options.php:2019
+#: includes/iworks/options/options.php:2444
 msgid "ON"
 msgstr ""
 
-#: includes/iworks/options/options.php:2084
+#: includes/iworks/options/options.php:2509
 msgid "Failed Security Check"
 msgstr ""
 
@@ -159,21 +171,75 @@ msgstr ""
 msgid "Provide us a coffee"
 msgstr ""
 
-#: includes/iworks/rate/rate.php:446
+#: includes/iworks/rate/rate.php:590
 #. translators: %s: plugin id
 msgid "There is no plugin with id: %s."
 msgstr ""
 
-#: includes/iworks/rate/rate.php:563
+#: includes/iworks/rate/rate.php:764
 msgid "OpenGraph"
 msgstr ""
 
-#: includes/iworks/rate/rate.php:579
+#: includes/iworks/rate/rate.php:780
 msgid "OG — Better Share on Social Media"
 msgstr ""
 
-#: includes/iworks/rate/rate.php:580
+#: includes/iworks/rate/rate.php:781
 msgid "https://wordpress.org/plugins/og/"
+msgstr ""
+
+#: includes/iworks/rate/templates/happy-anniversary/anniversary.php:21
+#: includes/iworks/rate/templates/happy-anniversary/first-year.php:21
+msgid "🎉 Happy Anniversary! 🎉"
+msgstr ""
+
+#: includes/iworks/rate/templates/happy-anniversary/anniversary.php:23
+msgid ""
+"Wow, it’s already been a whole year since you’ve been using our "
+"plugin—thank you so much for being part of our journey! We truly appreciate "
+"your support and hope the plugin has made your work easier and more "
+"enjoyable."
+msgstr ""
+
+#: includes/iworks/rate/templates/happy-anniversary/anniversary.php:24
+#: includes/iworks/rate/templates/happy-anniversary/first-year.php:24
+msgid ""
+"If you’ve found our plugin helpful and would like to support its continued "
+"development, we’d be incredibly grateful if you’d consider buying us a "
+"coffee. Every little bit helps us keep improving and adding new features "
+"for awesome users like you!"
+msgstr ""
+
+#: includes/iworks/rate/templates/happy-anniversary/anniversary.php:25
+#: includes/iworks/rate/templates/happy-anniversary/first-year.php:25
+msgid "☕ Buy Me a Coffee"
+msgstr ""
+
+#: includes/iworks/rate/templates/happy-anniversary/anniversary.php:26
+#: includes/iworks/rate/templates/happy-anniversary/first-year.php:26
+msgid "Thank you for your support and for making this community amazing!"
+msgstr ""
+
+#: includes/iworks/rate/templates/happy-anniversary/anniversary.php:30
+#: includes/iworks/rate/templates/happy-anniversary/first-year.php:30
+msgid "With gratitude"
+msgstr ""
+
+#: includes/iworks/rate/templates/happy-anniversary/anniversary.php:34
+#: includes/iworks/rate/templates/happy-anniversary/first-year.php:34
+msgid "Marcin Pietrzak"
+msgstr ""
+
+#: includes/iworks/rate/templates/happy-anniversary/anniversary.php:36
+#: includes/iworks/rate/templates/happy-anniversary/first-year.php:36
+msgid "Plugin Author"
+msgstr ""
+
+#: includes/iworks/rate/templates/happy-anniversary/first-year.php:23
+msgid ""
+"Wow, it’s already been a whole year since you started using our "
+"plugin—thank you so much for being part of our journey! We hope it’s made "
+"your work easier and more enjoyable."
 msgstr ""
 
 #: includes/iworks/rate/templates/plugins/og.php:4
@@ -274,28 +340,28 @@ msgstr ""
 msgid "AUTHOR_URI"
 msgstr ""
 
-#: etc/options.php:141
+#: etc/options.php:156
 msgctxt "plugin home page on WordPress.org"
 msgid "https://wordpress.org/plugins/wp-sitemap-control/"
 msgstr ""
 
-#: etc/options.php:156
+#: etc/options.php:171
 msgctxt "link to support forum on WordPress.org"
 msgid "https://wordpress.org/support/plugin/wp-sitemap-control/"
 msgstr ""
 
-#: includes/iworks/class-wp-sitemap-control.php:112
+#: includes/iworks/class-wp-sitemap-control.php:113
 msgctxt "sitemap tag title in html head"
 msgid "Sitemap"
 msgstr ""
 
-#: includes/iworks/rate/rate.php:469
+#: includes/iworks/rate/rate.php:613
 #. translators: %s: plugin slug
 msgctxt "plugins home"
 msgid "https://wordpress.org/plugins/%s"
 msgstr ""
 
-#: includes/iworks/rate/rate.php:476
+#: includes/iworks/rate/rate.php:620
 #. translators: %s: plugin slug
 msgctxt "plugins support home"
 msgid "https://wordpress.org/support/plugin/%s"

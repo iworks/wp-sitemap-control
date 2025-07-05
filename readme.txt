@@ -30,6 +30,7 @@ The configuration allows you to turn off individual content from the sitemap - a
 [sitemap]: https://make.wordpress.org/core/2020/07/22/new-xml-sitemaps-functionality-in-wordpress-5-5/
 [Learn about sitemaps]: https://developers.google.com/search/docs/advanced/sitemaps/overview
 [Simple SEO Improvements]: https://wordpress.org/plugins/simple-seo-improvements/
+[#1]: https://github.com/iworks/wp-sitemap-control/issues/1
 
 = See room for improvement? =
 
@@ -98,9 +99,10 @@ A sitemap is a file where you provide information about the pages, videos, and o
 Project maintained on github at [iworks/wp-sitemap-control](https://github.com/iworks/wp-sitemap-control).
 
 = 1.2.0 (2025-07-05) =
-* Exclude taxonomies from sitemap.
+* Exclude taxonomies from sitemap [#1][].
 * Updated the [iWorks Rate](https://github.com/iworks/iworks-rate) module to version 2.3.1.
 * Updated the [iWorks Options](https://github.com/iworks/wordpress-options-class) module to version 3.0.7.
+* Added sitemap.xml links for debugging.
 
 = 1.1.2 (2025-03-28) =
 * Updated the [iWorks Options](https://github.com/iworks/wordpress-options-class) module to version 2.9.9.

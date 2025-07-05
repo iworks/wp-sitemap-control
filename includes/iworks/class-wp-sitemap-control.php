@@ -25,7 +25,7 @@ if ( class_exists( 'sitemap_control' ) ) {
 	return;
 }
 
-require_once dirname( __FILE__ ) . '/class-wp-sitemap-control-base.php';
+require_once __DIR__ . '/class-wp-sitemap-control-base.php';
 
 class sitemap_control extends iworks_wp_sitemap_control_base {
 
@@ -61,7 +61,7 @@ class sitemap_control extends iworks_wp_sitemap_control_base {
 	public function __construct() {
 		parent::__construct();
 		$this->options    = sitemap_control_get_options_object();
-		$this->base       = dirname( dirname( __FILE__ ) );
+		$this->base       = dirname( __DIR__, 1 );
 		$this->dir        = basename( dirname( $this->base ) );
 		$this->version    = 'PLUGIN_VERSION';
 		$this->capability = apply_filters( 'sitemap_control_capability', 'manage_options' );
@@ -85,6 +85,7 @@ class sitemap_control extends iworks_wp_sitemap_control_base {
 		add_filter( 'wp_sitemaps_posts_query_args', array( $this, 'attachments' ), 10, 2 );
 		add_filter( 'wp_sitemaps_posts_entry', array( $this, 'add_last_mod' ), 10, 2 );
 		add_filter( 'wp_sitemaps_add_provider', array( $this, 'provider' ), 10, 2 );
+		add_filter( 'iworks/wp-sitemap-control/options', array( $this, 'filter_options' ) );
 		/**
 		 * add head link
 		 */
@@ -99,10 +100,17 @@ class sitemap_control extends iworks_wp_sitemap_control_base {
 		 *
 		 * @since 1.0.8
 		 */
-		$filename = __DIR__ . '/wp-sitemap-control/class-iworks-wp-sitemap-control-github.php';
-		if ( is_file( $filename ) ) {
-			include_once $filename;
-			new iworks_wp_sitemap_control_github();
+		$classes = array(
+			'github',
+			'taxonomies',
+		);
+		foreach ( $classes as $class ) {
+			$filename = __DIR__ . '/wp-sitemap-control/class-iworks-wp-sitemap-control-' . $class . '.php';
+			if ( is_file( $filename ) ) {
+				include_once $filename;
+				$class_name = 'iworks_wp_sitemap_control_' . $class;
+				new $class_name();
+			}
 		}
 	}
 
@@ -293,7 +301,7 @@ class sitemap_control extends iworks_wp_sitemap_control_base {
 			$plugin = (array) $plugin;
 		}
 		if ( 'wp-sitemap-control' === $plugin['slug'] ) {
-			return plugin_dir_url( dirname( dirname( __FILE__ ) ) ) . '/assets/images/logo.svg';
+			return plugin_dir_url( dirname( __DIR__, 1 ) ) . '/assets/images/logo.svg';
 		}
 		return $logo;
 	}
@@ -508,7 +516,7 @@ class sitemap_control extends iworks_wp_sitemap_control_base {
 	 */
 	public function action_init_register_iworks_rate() {
 		if ( ! class_exists( 'iworks_rate' ) ) {
-			include_once dirname( __FILE__ ) . '/rate/rate.php';
+			include_once __DIR__ . '/rate/rate.php';
 		}
 		do_action(
 			'iworks-register-plugin',
@@ -518,4 +526,30 @@ class sitemap_control extends iworks_wp_sitemap_control_base {
 		);
 	}
 
+	/**
+	 * Filter options
+	 *
+	 * @since 1.1.3
+	 */
+
+	public function filter_options( $etc_options ) {
+		$etc_options[] = array(
+			'type'  => 'subheading',
+			'label' => __( 'WP Sitemap', 'wp-sitemap-control' ),
+		);
+		$value         = '<ul>';
+		$url           = get_home_url() . '/wp-sitemap.xml';
+		$value        .= '<li><a href="' . esc_url( $url ) . '" target="_blank">' . esc_html( $url ) . '</a></li>';
+		$url           = get_home_url() . '/sitemap.xml';
+		$value        .= '<li><a href="' . esc_url( $url ) . '" target="_blank">' . esc_html( $url ) . '</a></li>';
+		$url           = add_query_arg( 'sitemap', 'index', get_home_url() );
+		$value        .= '<li><a href="' . esc_url( $url ) . '" target="_blank">' . esc_html( $url ) . '</a></li>';
+		$value        .= '</ul>';
+		$etc_options[] = array(
+			'type'  => 'info',
+			'th'    => __( 'URL', 'wp-sitemap-control' ),
+			'value' => $value,
+		);
+		return $etc_options;
+	}
 }

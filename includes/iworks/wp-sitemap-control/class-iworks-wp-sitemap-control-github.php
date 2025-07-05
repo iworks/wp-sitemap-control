@@ -23,10 +23,43 @@ if ( class_exists( 'iworks_wp_sitemap_control_github' ) ) {
 	return;
 }
 
+/**
+ * Class iworks_wp_sitemap_control_github
+ *
+ * @since 1.0.0
+ */
 class iworks_wp_sitemap_control_github {
 
+	/**
+	 * Repository name
+	 *
+	 * @since 1.0.0
+	 * @var string
+	 */
 	private string $repository = 'iworks/wp-sitemap-control';
-	private string $basename   = 'wp-sitemap-control';
+
+	/**
+	 * Plugin basename
+	 *
+	 * @since 1.0.0
+	 * @var string
+	 */
+	private string $basename = 'wp-sitemap-control';
+
+	/**
+	 * Plugin file name
+	 *
+	 * @since 1.0.0
+	 * @var string
+	 */
+	private string $plugin_file = 'wp-sitemap-control.php';
+
+	/**
+	 * GitHub response
+	 *
+	 * @since 1.0.0
+	 * @var array
+	 */
 	private $github_response;
 
 	public function __construct() {
@@ -45,7 +78,7 @@ class iworks_wp_sitemap_control_github {
 	 * @since 1.0.0
 	 */
 	public function action_init_load_plugin_textdomain() {
-		$dir = plugin_basename( dirname( dirname( dirname( __DIR__ ) ) ) ) . '/languages';
+		$dir = plugin_basename( dirname( __DIR__, 3 ) ) . '/languages';
 		load_plugin_textdomain( 'wp-sitemap-control', false, $dir );
 	}
 
@@ -121,7 +154,7 @@ class iworks_wp_sitemap_control_github {
 		if ( empty( $repo_info ) ) {
 			return $result;
 		}
-		$details = get_plugin_data( dirname( $this->base ) . '/' . $this->plugin_file );
+		$details = get_plugin_data( dirname( $this->base ) . '/wp-sitemap-control.php' );
 		// Create array to hold the plugin data
 		$plugin = array(
 			'name'              => $details['Name'],
@@ -247,4 +280,3 @@ class iworks_wp_sitemap_control_github {
 		return $result;
 	}
 }
-
