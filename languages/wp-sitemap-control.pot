@@ -2,9 +2,9 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.2.0\n"
+"Project-Id-Version: 1.2.1\n"
 "Report-Msgid-Bugs-To: http://iworks.pl\n"
-"POT-Creation-Date: 2025-07-05 15:43:43+00:00\n"
+"POT-Creation-Date: 2025-10-16 20:23:55+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -89,12 +89,12 @@ msgstr ""
 msgid "WordPress Help Forum"
 msgstr ""
 
-#: includes/iworks/class-wp-sitemap-control.php:281
-#: includes/iworks/rate/rate.php:133
+#: includes/iworks/class-wp-sitemap-control.php:292
+#: includes/iworks/rate/rate.php:159
 msgid "Settings"
 msgstr ""
 
-#: includes/iworks/class-wp-sitemap-control.php:285
+#: includes/iworks/class-wp-sitemap-control.php:296
 msgid "Donate"
 msgstr ""
 
@@ -102,92 +102,92 @@ msgstr ""
 msgid "WP Sitemap Control"
 msgstr ""
 
-#: includes/iworks/class-wp-sitemap-control.php:423
+#: includes/iworks/class-wp-sitemap-control.php:437
 msgid "Include in sitemap"
 msgstr ""
 
-#: includes/iworks/class-wp-sitemap-control.php:433
+#: includes/iworks/class-wp-sitemap-control.php:447
 #: includes/iworks/wp-sitemap-control/class-iworks-wp-sitemap-control-taxonomies.php:111
 #: includes/iworks/wp-sitemap-control/class-iworks-wp-sitemap-control-taxonomies.php:131
 msgid "Exclude from sitemap"
 msgstr ""
 
-#: includes/iworks/class-wp-sitemap-control.php:538
+#: includes/iworks/class-wp-sitemap-control.php:552
 msgid "WP Sitemap"
 msgstr ""
 
-#: includes/iworks/class-wp-sitemap-control.php:550
+#: includes/iworks/class-wp-sitemap-control.php:564
 msgid "URL"
 msgstr ""
 
-#: includes/iworks/options/options.php:176
+#: includes/iworks/options/options.php:175
 msgid "No Page Title"
 msgstr ""
 
-#: includes/iworks/options/options.php:341
+#: includes/iworks/options/options.php:340
 msgid "An error occurred while getting the configuration."
 msgstr ""
 
-#: includes/iworks/options/options.php:920
-#: includes/iworks/options/options.php:2383
+#: includes/iworks/options/options.php:919
+#: includes/iworks/options/options.php:2407
 msgid "Select Image"
 msgstr ""
 
-#: includes/iworks/options/options.php:925
+#: includes/iworks/options/options.php:924
 msgid "Delete image"
 msgstr ""
 
-#: includes/iworks/options/options.php:1033
+#: includes/iworks/options/options.php:1032
 msgid "Save Changes"
 msgstr ""
 
-#: includes/iworks/options/options.php:2256
+#: includes/iworks/options/options.php:2280
 msgid "Country"
 msgstr ""
 
-#: includes/iworks/options/options.php:2257
+#: includes/iworks/options/options.php:2281
 msgid "City"
 msgstr ""
 
-#: includes/iworks/options/options.php:2258
+#: includes/iworks/options/options.php:2282
 msgid "Street"
 msgstr ""
 
-#: includes/iworks/options/options.php:2259
+#: includes/iworks/options/options.php:2283
 msgid "ZIP code"
 msgstr ""
 
-#: includes/iworks/options/options.php:2443
+#: includes/iworks/options/options.php:2467
 msgid "OFF"
 msgstr ""
 
-#: includes/iworks/options/options.php:2444
+#: includes/iworks/options/options.php:2468
 msgid "ON"
 msgstr ""
 
-#: includes/iworks/options/options.php:2509
+#: includes/iworks/options/options.php:2533
 msgid "Failed Security Check"
 msgstr ""
 
-#: includes/iworks/rate/rate.php:147
+#: includes/iworks/rate/rate.php:173
 #: includes/iworks/rate/templates/thanks.php:39
 msgid "Provide us a coffee"
 msgstr ""
 
-#: includes/iworks/rate/rate.php:590
+#: includes/iworks/rate/rate.php:626
 #. translators: %s: plugin id
 msgid "There is no plugin with id: %s."
 msgstr ""
 
-#: includes/iworks/rate/rate.php:764
+#: includes/iworks/rate/rate.php:800
 msgid "OpenGraph"
 msgstr ""
 
-#: includes/iworks/rate/rate.php:780
+#: includes/iworks/rate/rate.php:816
 msgid "OG — Better Share on Social Media"
 msgstr ""
 
-#: includes/iworks/rate/rate.php:781
+#: includes/iworks/rate/rate.php:817
 msgid "https://wordpress.org/plugins/og/"
 msgstr ""
 
@@ -370,18 +370,18 @@ msgctxt "link to support forum on WordPress.org"
 msgid "https://wordpress.org/support/plugin/wp-sitemap-control/"
 msgstr ""
 
-#: includes/iworks/class-wp-sitemap-control.php:120
+#: includes/iworks/class-wp-sitemap-control.php:129
 msgctxt "sitemap tag title in html head"
 msgid "Sitemap"
 msgstr ""
 
-#: includes/iworks/rate/rate.php:613
+#: includes/iworks/rate/rate.php:649
 #. translators: %s: plugin slug
 msgctxt "plugins home"
 msgid "https://wordpress.org/plugins/%s"
 msgstr ""
 
-#: includes/iworks/rate/rate.php:620
+#: includes/iworks/rate/rate.php:656
 #. translators: %s: plugin slug
 msgctxt "plugins support home"
 msgid "https://wordpress.org/support/plugin/%s"

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Plugins - WP Sitemap Control - Development (trunk)\n"
 "Report-Msgid-Bugs-To: http://iworks.pl\n"
-"POT-Creation-Date: 2025-07-05 15:43:33+00:00\n"
+"POT-Creation-Date: 2025-10-16 20:23:44+00:00\n"
 "PO-Revision-Date: 2025-07-05 15:42:13+0000\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -79,12 +79,12 @@ msgstr "Odnośnik do wtyczki - żeby łatwo było znaleźć"
 msgid "WordPress Help Forum"
 msgstr "Forum Pomocy WordPressa"
 
-#: includes/iworks/class-wp-sitemap-control.php:281
-#: includes/iworks/rate/rate.php:133
+#: includes/iworks/class-wp-sitemap-control.php:292
+#: includes/iworks/rate/rate.php:159
 msgid "Settings"
 msgstr "Ustawienia"
 
-#: includes/iworks/class-wp-sitemap-control.php:285
+#: includes/iworks/class-wp-sitemap-control.php:296
 msgid "Donate"
 msgstr "Złóż datek"
 
@@ -92,92 +92,92 @@ msgstr "Złóż datek"
 msgid "WP Sitemap Control"
 msgstr "WP Sitemap Control"
 
-#: includes/iworks/class-wp-sitemap-control.php:423
+#: includes/iworks/class-wp-sitemap-control.php:437
 msgid "Include in sitemap"
 msgstr "Uwzględnij w mapie witryny"
 
-#: includes/iworks/class-wp-sitemap-control.php:433
+#: includes/iworks/class-wp-sitemap-control.php:447
 #: includes/iworks/wp-sitemap-control/class-iworks-wp-sitemap-control-taxonomies.php:111
 #: includes/iworks/wp-sitemap-control/class-iworks-wp-sitemap-control-taxonomies.php:131
 msgid "Exclude from sitemap"
 msgstr "Wyklucz z mapy witryny"
 
-#: includes/iworks/class-wp-sitemap-control.php:538
+#: includes/iworks/class-wp-sitemap-control.php:552
 msgid "WP Sitemap"
 msgstr "Mapa witryny WP"
 
-#: includes/iworks/class-wp-sitemap-control.php:550
+#: includes/iworks/class-wp-sitemap-control.php:564
 msgid "URL"
 msgstr "Adres url"
 
-#: includes/iworks/options/options.php:176
+#: includes/iworks/options/options.php:175
 msgid "No Page Title"
 msgstr "Brak tytułu strony"
 
-#: includes/iworks/options/options.php:341
+#: includes/iworks/options/options.php:340
 msgid "An error occurred while getting the configuration."
 msgstr "Wystąpił błąd przy pobieraniu konfiguracji."
 
-#: includes/iworks/options/options.php:920
-#: includes/iworks/options/options.php:2383
+#: includes/iworks/options/options.php:919
+#: includes/iworks/options/options.php:2407
 msgid "Select Image"
 msgstr "Wybierz obrazek"
 
-#: includes/iworks/options/options.php:925
+#: includes/iworks/options/options.php:924
 msgid "Delete image"
 msgstr "Usuń obrazek"
 
-#: includes/iworks/options/options.php:1033
+#: includes/iworks/options/options.php:1032
 msgid "Save Changes"
 msgstr "Zapisz zmiany"
 
-#: includes/iworks/options/options.php:2256
+#: includes/iworks/options/options.php:2280
 msgid "Country"
 msgstr "Kraj"
 
-#: includes/iworks/options/options.php:2257
+#: includes/iworks/options/options.php:2281
 msgid "City"
 msgstr "Miejscowość"
 
-#: includes/iworks/options/options.php:2258
+#: includes/iworks/options/options.php:2282
 msgid "Street"
 msgstr "Ulica"
 
-#: includes/iworks/options/options.php:2259
+#: includes/iworks/options/options.php:2283
 msgid "ZIP code"
 msgstr "Kod pocztowy"
 
-#: includes/iworks/options/options.php:2443
+#: includes/iworks/options/options.php:2467
 msgid "OFF"
 msgstr "Wyłącz"
 
-#: includes/iworks/options/options.php:2444
+#: includes/iworks/options/options.php:2468
 msgid "ON"
 msgstr "Włącz"
 
-#: includes/iworks/options/options.php:2509
+#: includes/iworks/options/options.php:2533
 msgid "Failed Security Check"
 msgstr "Nieudana kontrola bezpieczeństwa"
 
-#: includes/iworks/rate/rate.php:147
+#: includes/iworks/rate/rate.php:173
 #: includes/iworks/rate/templates/thanks.php:39
 msgid "Provide us a coffee"
 msgstr "Postaw nam kawę"
 
 #. translators: %s: plugin id
-#: includes/iworks/rate/rate.php:590
+#: includes/iworks/rate/rate.php:626
 msgid "There is no plugin with id: %s."
 msgstr "Brak wtyczki o identyfikatorze %s."
 
-#: includes/iworks/rate/rate.php:764
+#: includes/iworks/rate/rate.php:800
 msgid "OpenGraph"
 msgstr "OpenGraph"
 
-#: includes/iworks/rate/rate.php:780
+#: includes/iworks/rate/rate.php:816
 msgid "OG — Better Share on Social Media"
 msgstr "OG — Lepsze udostępnianie w mediach społecznościowych"
 
-#: includes/iworks/rate/rate.php:781
+#: includes/iworks/rate/rate.php:817
 msgid "https://wordpress.org/plugins/og/"
 msgstr "https://pl.wordpress.org/plugins/og/"
 
@@ -389,19 +389,19 @@ msgctxt "link to support forum on WordPress.org"
 msgid "https://wordpress.org/support/plugin/wp-sitemap-control/"
 msgstr "https://wordpress.org/support/plugin/wp-sitemap-control/"
 
-#: includes/iworks/class-wp-sitemap-control.php:120
+#: includes/iworks/class-wp-sitemap-control.php:129
 msgctxt "sitemap tag title in html head"
 msgid "Sitemap"
 msgstr "Mapa witryny"
 
 #. translators: %s: plugin slug
-#: includes/iworks/rate/rate.php:613
+#: includes/iworks/rate/rate.php:649
 msgctxt "plugins home"
 msgid "https://wordpress.org/plugins/%s"
 msgstr "https://pl.wordpress.org/plugins/%s"
 
 #. translators: %s: plugin slug
-#: includes/iworks/rate/rate.php:620
+#: includes/iworks/rate/rate.php:656
 msgctxt "plugins support home"
 msgid "https://wordpress.org/support/plugin/%s"
 msgstr "https://wordpress.org/support/plugin/%s"
