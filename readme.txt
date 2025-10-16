@@ -97,6 +97,10 @@ A sitemap is a file where you provide information about the pages, videos, and o
 
 Project maintained on github at [iworks/wp-sitemap-control](https://github.com/iworks/wp-sitemap-control).
 
+= 1.2.1 (2025-10-16) =
+* Updated the [iWorks Rate](https://github.com/iworks/iworks-rate) module to version 2.3.2.
+* Updated the [iWorks Options](https://github.com/iworks/wordpress-options-class) module to version 3.0.8.
+
 = 1.2.0 (2025-07-05) =
 * Exclude taxonomies from sitemap [#1](https://github.com/iworks/wp-sitemap-control/issues/1).
 * Updated the [iWorks Rate](https://github.com/iworks/iworks-rate) module to version 2.3.1.
