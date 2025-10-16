@@ -60,18 +60,17 @@ class sitemap_control extends iworks_wp_sitemap_control_base {
 
 	public function __construct() {
 		parent::__construct();
-		$this->options    = sitemap_control_get_options_object();
 		$this->base       = dirname( __DIR__, 1 );
 		$this->dir        = basename( dirname( $this->base ) );
 		$this->version    = 'PLUGIN_VERSION';
 		$this->capability = apply_filters( 'sitemap_control_capability', 'manage_options' );
-		$this->meta_name  = $this->get_meta_name( $this->options->get_option_name( 'include' ) );
 		/**
 		 * WordPress hooks
 		 */
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
 		add_action( 'edit_attachment', array( $this, 'save_data' ) );
+		add_action( 'init', array( $this, 'action_init_setup' ) );
 		add_action( 'init', array( $this, 'register' ) );
 		add_action( 'init', array( $this, 'action_init_register_iworks_rate' ), PHP_INT_MAX );
 		add_action( 'load-settings_page_wpsmc_index', array( $this, 'admin_enqueue' ) );
@@ -114,6 +113,16 @@ class sitemap_control extends iworks_wp_sitemap_control_base {
 		}
 	}
 
+	/**
+	 * init options setup - it have to be init after translations are loaded
+	 *
+	 * @since 1.2.1
+	 */
+	public function action_init_setup() {
+		$this->check_option_object();
+		$this->meta_name = $this->get_meta_name( $this->options->get_option_name( 'include' ) );
+	}
+
 	public function wp_head_add_sitemap() {
 		printf(
 			'<link rel="sitemap" type="application/xml" title="%s" href="%s" />%s',
@@ -142,6 +151,7 @@ class sitemap_control extends iworks_wp_sitemap_control_base {
 	 * @since 1.0.0
 	 */
 	public function post_types( $elements ) {
+		$this->check_option_object();
 		foreach ( $this->options->get_all_options() as $name => $value ) {
 			if ( preg_match( '/^post_type_(.+)$/', $name, $matches ) ) {
 				$slug = $matches[1];
@@ -163,6 +173,7 @@ class sitemap_control extends iworks_wp_sitemap_control_base {
 	 * @since 1.0.0
 	 */
 	public function taxonomies( $elements ) {
+		$this->check_option_object();
 		foreach ( $this->options->get_all_options() as $name => $value ) {
 			if ( preg_match( '/^taxonomy_(.+)$/', $name, $matches ) ) {
 				$slug = $matches[1];
@@ -312,6 +323,7 @@ class sitemap_control extends iworks_wp_sitemap_control_base {
 	 * @since 1.0.0
 	 */
 	public function add_last_mod( $entry, $post ) {
+		$this->check_option_object();
 		if ( $this->options->get_option( 'lastmod' ) ) {
 			$entry['lastmod'] = gmdate( 'Y-m-d', strtotime( $post->post_modified_gmt ) );
 		}
@@ -324,6 +336,7 @@ class sitemap_control extends iworks_wp_sitemap_control_base {
 	 * @since 1.0.0
 	 */
 	public function provider( $provider, $name ) {
+		$this->check_option_object();
 		/**
 		 * remove users (authors)
 		 */
@@ -374,6 +387,7 @@ class sitemap_control extends iworks_wp_sitemap_control_base {
 
 	public function add_meta_boxes() {
 		$post_type = get_post_type();
+		$this->check_option_object();
 		if ( ! $this->options->get_option( 'single_' . $post_type ) ) {
 			return;
 		}

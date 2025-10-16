@@ -41,7 +41,7 @@ class iworks_wp_sitemap_control_base {
 		 * static settings
 		 */
 		$this->dev  = ( defined( 'IWORKS_DEV_MODE' ) && IWORKS_DEV_MODE ) ? '' : '.min';
-		$this->base = dirname( dirname( __FILE__ ) );
+		$this->base = dirname( __DIR__, 1 );
 		$this->dir  = basename( dirname( $this->base ) );
 		/**
 		 * plugin ID
@@ -148,5 +148,18 @@ class iworks_wp_sitemap_control_base {
 
 	protected function html_title( $text ) {
 		printf( '<h1 class="wp-heading-inline">%s</h1>', esc_html( $text ) );
+	}
+
+
+	/**
+	 * check option object
+	 *
+	 * @since 1.2.1
+	 */
+	protected function check_option_object() {
+		if ( is_a( $this->options, 'iworks_options' ) ) {
+			return;
+		}
+		$this->options = sitemap_control_get_options_object();
 	}
 }
