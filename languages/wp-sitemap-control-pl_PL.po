@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Plugins - WP Sitemap Control - Development (trunk)\n"
 "Report-Msgid-Bugs-To: http://iworks.pl\n"
-"POT-Creation-Date: 2025-10-16 20:23:44+00:00\n"
+"POT-Creation-Date: 2025-10-17 04:19:29+00:00\n"
 "PO-Revision-Date: 2025-07-05 15:42:13+0000\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 "
 "&& (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
-"X-Generator: GlotPress/4.0.1\n"
+"X-Generator: GlotPress/4.0.2\n"
 
 #: etc/options.php:10
 #: includes/iworks/wp-sitemap-control/class-iworks-wp-sitemap-control-taxonomies.php:168
